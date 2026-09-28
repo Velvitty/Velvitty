@@ -35,13 +35,13 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/Velvitty/Chordity"><picture><source media="(max-width: 640px)" srcset="assets/studio/chordity-compact.svg" /><img src="assets/studio/chordity.svg" width="38%" alt="Chordity: 음원의 코드와 박을 추정하고, 메트로놈과 합성 피아노로 확인합니다." /></picture></a>
+  <a href="https://github.com/Velvitty/Chordity"><picture><source media="(max-width: 640px)" srcset="assets/studio/chordity-playing-compact.svg" /><img src="assets/studio/chordity-playing.svg" width="38%" alt="Chordity: 음원의 코드와 박을 추정하고, 메트로놈과 합성 피아노로 확인합니다." /></picture></a>
   <a href="https://github.com/Velvitty/efx"><picture><source media="(max-width: 640px)" srcset="assets/studio/analog-soul-compact.svg" /><img src="assets/studio/analog-soul.svg" width="60%" alt="Analog Soul: 아날로그 질감과 공간 효과를 조절하고 WAV로 내보냅니다." /></picture></a>
 </p>
 
 <p align="center">
   <a href="https://github.com/Velvitty/Film_Sim"><picture><source media="(max-width: 640px)" srcset="assets/studio/film-studio-compact.svg" /><img src="assets/studio/film-studio.svg" width="49%" alt="Film Filter Studio: 필름 색감·그레인·할레이션과 빈티지 렌즈 효과를 적용합니다." /></picture></a>
-  <a href="https://github.com/Velvitty/Photo_Scorer"><picture><source media="(max-width: 640px)" srcset="assets/studio/photo-score-compact.svg" /><img src="assets/studio/photo-score.svg" width="49%" alt="Photo Score: 사진의 수치적 특징을 분석하고 촬영·후보정 팁을 제공합니다." /></picture></a>
+  <a href="https://github.com/Velvitty/Photo_Scorer"><picture><source media="(max-width: 640px)" srcset="assets/studio/photo-score-live-compact.svg" /><img src="assets/studio/photo-score-live.svg" width="49%" alt="Photo Score: 사진의 수치적 특징을 분석하고 촬영·후보정 팁을 제공합니다." /></picture></a>
 </p>
 
 <details>
