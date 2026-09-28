@@ -80,6 +80,12 @@
 
 필요를 잘못 짚으면 정교한 기능도 쓰일 자리를 찾기 어렵고, 필요한 기능도 느리거나 쉽게 멈추면 쓰임이 이어지기 어렵습니다. 그래서 **무엇을 위해 만들지**는 「이용자 가치 지향 10계명」으로, **그 가치를 어떻게 지킬지**는 「연이 개발 지향 10계명」으로 정리했습니다. 기능을 더하거나 방향을 바꿀 때마다 돌아보고 싶은 판단 기준입니다.
 
+<!-- principles-glass-start -->
+<p align="center">
+  <picture><source media="(max-width: 640px)" srcset="assets/studio/principles-glass-mobile.svg" /><img src="assets/studio/principles-glass.svg" width="100%" alt="이용자 가치 지향 10계명과 연이 개발 지향 10계명. 각 카드에 원칙 1번부터 10번까지 담았습니다. 전체 원문과 각 원칙의 이유는 아래에서 펼쳐 읽을 수 있습니다." /></picture>
+</p>
+<!-- principles-glass-end -->
+
 <details>
 <summary><strong>이용자 가치 지향 10계명 · 무엇을 위해 만드는가</strong></summary>
 
