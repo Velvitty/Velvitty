@@ -35,7 +35,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/Velvitty/Chordity"><picture><source media="(max-width: 640px)" srcset="assets/studio/chordity-held-chords-compact.svg" /><img src="assets/studio/chordity-held-chords.svg" width="38%" alt="Chordity: 음원의 코드와 박을 추정하고, 메트로놈과 합성 피아노로 확인합니다." /></picture></a>
+  <a href="https://github.com/Velvitty/Chordity"><picture><source media="(max-width: 640px)" srcset="assets/studio/chordity-1200ms-compact.svg" /><img src="assets/studio/chordity-1200ms.svg" width="38%" alt="Chordity: 음원의 코드와 박을 추정하고, 메트로놈과 합성 피아노로 확인합니다." /></picture></a>
   <a href="https://github.com/Velvitty/efx"><picture><source media="(max-width: 640px)" srcset="assets/studio/analog-soul-compact.svg" /><img src="assets/studio/analog-soul.svg" width="60%" alt="Analog Soul: 아날로그 질감과 공간 효과를 조절하고 WAV로 내보냅니다." /></picture></a>
 </p>
 
