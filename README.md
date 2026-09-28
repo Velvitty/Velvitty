@@ -30,12 +30,12 @@
 사진의 색을 다시 찾고, 소리의 구조를 읽고, 창작의 다음 단계를 열어 주는 도구들입니다. **카드를 누르면 프로젝트로 이동합니다.**
 
 <p align="center">
-  <a href="https://github.com/Velvitty/Illustracy"><picture><source media="(max-width: 640px)" srcset="assets/studio/illustracy-compact.svg" /><img src="assets/studio/illustracy.svg" width="60%" alt="Illustracy: 일러스트를 분석해 편집 가능한 레이어와 PSD로 재구성합니다." /></picture></a>
+  <a href="https://github.com/Velvitty/Illustracy"><picture><source media="(max-width: 640px)" srcset="assets/studio/illustracy-layers-compact.svg" /><img src="assets/studio/illustracy-layers.svg" width="60%" alt="Illustracy: 일러스트를 분석해 편집 가능한 레이어와 PSD로 재구성합니다." /></picture></a>
   <a href="https://github.com/Velvitty/Scanner"><picture><source media="(max-width: 640px)" srcset="assets/studio/posity-compact.svg" /><img src="assets/studio/posity.svg" width="38%" alt="Posity: 컬러 네거티브 스캔을 사진으로 변환하고 색과 밝기를 조절합니다." /></picture></a>
 </p>
 
 <p align="center">
-  <a href="https://github.com/Velvitty/Chordity"><picture><source media="(max-width: 640px)" srcset="assets/studio/chordity-playing-compact.svg" /><img src="assets/studio/chordity-playing.svg" width="38%" alt="Chordity: 음원의 코드와 박을 추정하고, 메트로놈과 합성 피아노로 확인합니다." /></picture></a>
+  <a href="https://github.com/Velvitty/Chordity"><picture><source media="(max-width: 640px)" srcset="assets/studio/chordity-chords-compact.svg" /><img src="assets/studio/chordity-chords.svg" width="38%" alt="Chordity: 음원의 코드와 박을 추정하고, 메트로놈과 합성 피아노로 확인합니다." /></picture></a>
   <a href="https://github.com/Velvitty/efx"><picture><source media="(max-width: 640px)" srcset="assets/studio/analog-soul-compact.svg" /><img src="assets/studio/analog-soul.svg" width="60%" alt="Analog Soul: 아날로그 질감과 공간 효과를 조절하고 WAV로 내보냅니다." /></picture></a>
 </p>
 
