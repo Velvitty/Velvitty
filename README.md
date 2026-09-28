@@ -10,6 +10,11 @@
 </p>
 
 <p align="center">
+  <strong>기기는 달라도, 쓰임은 같도록.</strong><br />
+  크로스 플랫폼 · 성능 최적화 · 반응형 설계
+</p>
+
+<p align="center">
   <a href="#projects"><strong>프로젝트 탐색 ↘</strong></a>　·　
   <a href="#approach">만드는 방식</a>　·　
   <a href="https://github.com/Velvitty?tab=repositories">모든 저장소 ↗</a>
@@ -64,7 +69,7 @@
 
 **작은 필요에도 가치를 둡니다.** 소수의 필요에도 쓸모가 있다고 믿으며, 복잡한 기술을 누구나 쉽게 사용할 수 있게 다듬습니다.
 
-**브라우저를 작업 공간으로 삼습니다.** 주로 HTML에 JavaScript와 CSS를 담아, 클라이언트에서 실행되는 도구를 개발합니다.
+**기기의 경계를 넘습니다.** 운영체제에 묶이지 않도록 웹으로 만들고, 최적화와 반응형 설계를 기본으로 삼습니다.
 
 <details>
 <summary><strong>더 둘러보기</strong></summary>
