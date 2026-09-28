@@ -1,5 +1,5 @@
 <p align="center">
-<picture><source media="(max-width: 640px)" srcset="assets/studio/hero-mobius-material-mobile.svg" /><img src="assets/studio/hero-mobius-material.svg" width="100%" alt="Yeony — 작은 아이디어를 쓸모 있는 가능성으로. 사진·음향·창작 도구를 만듭니다." /></picture>
+<picture><source media="(max-width: 640px)" srcset="assets/studio/hero-mobius-smooth-mobile.svg" /><img src="assets/studio/hero-mobius-smooth.svg" width="100%" alt="Yeony — 작은 아이디어를 쓸모 있는 가능성으로. 사진·음향·창작 도구를 만듭니다." /></picture>
 </p>
 
 <h1 align="center">쓸 것보다, 쓰임받을 것을.</h1>
