@@ -82,7 +82,7 @@
 
 <!-- principles-glass-start -->
 <p align="center">
-  <picture><source media="(max-width: 640px)" srcset="assets/studio/principles-glass-mobile.svg" /><img src="assets/studio/principles-glass.svg" width="100%" alt="이용자 가치 지향 10계명과 연이 개발 지향 10계명. 각 카드에 원칙 1번부터 10번까지 담았습니다. 전체 원문과 각 원칙의 이유는 아래에서 펼쳐 읽을 수 있습니다." /></picture>
+  <picture><source media="(max-width: 640px)" srcset="assets/studio/principles-glass-readable-mobile.svg" /><img src="assets/studio/principles-glass-readable.svg" width="100%" alt="이용자 가치 지향 10계명과 연이 개발 지향 10계명. 각 카드에 원칙 1번부터 10번까지 담았습니다. 전체 원문과 각 원칙의 이유는 아래에서 펼쳐 읽을 수 있습니다." /></picture>
 </p>
 <!-- principles-glass-end -->
 
