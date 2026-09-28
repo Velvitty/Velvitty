@@ -41,7 +41,7 @@
 
 <p align="center">
   <a href="https://github.com/Velvitty/Film_Sim"><picture><source media="(max-width: 640px)" srcset="assets/studio/film-studio-compact.svg" /><img src="assets/studio/film-studio.svg" width="49%" alt="Film Filter Studio: 필름 색감·그레인·할레이션과 빈티지 렌즈 효과를 적용합니다." /></picture></a>
-  <a href="https://github.com/Velvitty/Photo_Scorer"><picture><source media="(max-width: 640px)" srcset="assets/studio/photo-score-live-compact.svg" /><img src="assets/studio/photo-score-live.svg" width="49%" alt="Photo Score: 사진의 수치적 특징을 분석하고 촬영·후보정 팁을 제공합니다." /></picture></a>
+  <a href="https://github.com/Velvitty/Photo_Scorer"><picture><source media="(max-width: 640px)" srcset="assets/studio/photo-score-sky80-compact.svg" /><img src="assets/studio/photo-score-sky80.svg" width="49%" alt="Photo Score: 사진의 수치적 특징을 분석하고 촬영·후보정 팁을 제공합니다." /></picture></a>
 </p>
 
 <details>
