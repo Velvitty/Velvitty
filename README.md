@@ -15,9 +15,9 @@
 </p>
 
 <p align="center">
-  <a href="#projects"><strong>여섯 가지 프로젝트 ↘</strong></a>　·　
-  <a href="#approach">만드는 방식</a>　·　
-  <a href="#principles">개발 철학</a>　·　
+  <a href="#user-content-projects"><strong>여섯 가지 프로젝트 ↘</strong></a>　·　
+  <a href="#user-content-approach">만드는 방식</a>　·　
+  <a href="#user-content-principles">개발 철학</a>　·　
   <a href="https://github.com/Velvitty?tab=repositories">모든 저장소 ↗</a>
 </p>
 
