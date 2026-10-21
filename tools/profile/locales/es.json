@@ -1,0 +1,236 @@
+{
+  "lang": "es",
+  "name": "Español",
+  "display_name": "Yeony",
+  "headline": "Crear para los demás, no solo para mí.",
+  "hello": "Hola, soy <strong>Yeony</strong>.",
+  "intro": "Transformo los principios del sonido, la fotografía y la creación en herramientas fáciles de usar para cualquiera.",
+  "promise": "Distintos dispositivos. La misma utilidad.",
+  "pillars": "Multiplataforma · Optimización del rendimiento · Diseño adaptable",
+  "nav": [
+    "Seis proyectos ↘",
+    "Cómo desarrollo",
+    "Mis principios",
+    "Todos los repositorios ↗"
+  ],
+  "projects_title": "Donde las ideas se convierten en herramientas",
+  "projects_intro": "Seis herramientas para recuperar el color de las fotografías, explorar la estructura del sonido y abrir el siguiente paso en la creación.",
+  "projects_hint": "Pulsa una tarjeta para abrir el proyecto.",
+  "project_details": "Conocer las funciones de cada proyecto",
+  "table_headers": [
+    "Proyecto",
+    "Qué permite hacer"
+  ],
+  "project_names": [
+    "Illustracy",
+    "Posity",
+    "Chordity",
+    "Alma analógica",
+    "Upscaly",
+    "Estudio de filtros analógicos"
+  ],
+  "project_descriptions": [
+    "Analiza ilustraciones acopladas y las reconstruye en capas editables y archivos PSD. Los bocetos y los fondos ocultos se estiman y completan.",
+    "Convierte escaneos de negativos en color en fotografías, ajusta el brillo y el equilibrio de color, y exporta varias imágenes por lotes.",
+    "Estima los acordes de cada compás y los pulsos de una grabación, y permite comprobarlos con un metrónomo sincronizado y un piano sintetizado.",
+    "Ajusta el timbre analógico, la dinámica, los efectos espaciales y el refuerzo de altas frecuencias, con exportación en WAV.",
+    "Analiza el tipo y el estado de una imagen antes de ampliarla, con interpolación en luz lineal, ajuste de contornos y exportación PNG de 16 bits.",
+    "Aplica color y grano de película fotográfica, halación y efectos de objetivos antiguos."
+  ],
+  "limitations": "La separación de capas, la reconstrucción de bocetos y fondos y el reconocimiento de acordes generan estimaciones a partir del contenido original. El refuerzo de altas frecuencias y la ampliación de imágenes tampoco recuperan por completo la información original perdida. La documentación de cada proyecto explica su uso y sus limitaciones.",
+  "approach_title": "De principios complejos a un uso sencillo",
+  "approach": [
+    [
+      "La utilidad es lo primero.",
+      "Cuestiono las dificultades que hemos normalizado y parto de las voces de quienes realmente usan las herramientas."
+    ],
+    [
+      "Desarrollo con fundamentos.",
+      "Distingo las suposiciones de los hechos comprobados y explico tanto el resultado como los principios y las limitaciones que hay detrás."
+    ],
+    [
+      "Las necesidades minoritarias también importan.",
+      "Valoro las necesidades de unas pocas personas y adapto las tecnologías complejas para que cualquiera pueda utilizarlas."
+    ],
+    [
+      "Cruzo las fronteras entre dispositivos.",
+      "Desarrollo para la web para no depender de un solo sistema operativo, con la optimización y el diseño adaptable como base."
+    ]
+  ],
+  "principles_title": "Dos decálogos para crear herramientas útiles",
+  "principles_lead": "Creo que el valor del desarrollo consiste en hacer posible el siguiente paso de alguien.",
+  "principles_intro": "Si se interpreta mal una necesidad, incluso una función sofisticada puede no encontrar su lugar. Si una función necesaria es lenta o poco fiable, resulta difícil mantener su utilidad. Por eso, he recogido **para qué desarrollo** en el «Decálogo del valor para el usuario» y **cómo proteger ese valor** en el «Decálogo de desarrollo de Yeony». Son los criterios a los que quiero volver cada vez que añado una función o cambio de rumbo.",
+  "principles_groups": [
+    {
+      "title": "Decálogo del valor para el usuario",
+      "question": "¿Para qué desarrollo?",
+      "intro": "Estos principios parten de las necesidades de las personas para llegar a resultados que realmente ayuden.",
+      "short_title": "Valor para el usuario",
+      "eyebrow": "01 / VALOR PARA EL USUARIO",
+      "footer": "De una necesidad real a un uso real."
+    },
+    {
+      "title": "Decálogo de desarrollo de Yeony",
+      "question": "¿Cómo protejo ese valor?",
+      "intro": "Son los criterios que quiero respetar para que las funciones necesarias sean fiables en distintos entornos y puedan seguir mejorando con el tiempo.",
+      "short_title": "Desarrollo",
+      "eyebrow": "02 / DESARROLLO",
+      "footer": "Con fundamento. Hecho para durar."
+    }
+  ],
+  "reason_label": "Razones y fundamentos",
+  "choice_label": "Decisiones y expectativas",
+  "principles": [
+    {
+      "text": "Creo para los demás, no solo para mí.",
+      "reason": "Una forma de trabajar familiar para quien crea una herramienta no tiene por qué resultar natural para quien la usa por primera vez. Que a mí me resulte cómoda no basta para saber si ayudará en el trabajo de otra persona.",
+      "choice": "Quiero empezar preguntando quién buscará esta herramienta, en qué situación y para terminar qué tarea. Seguir su recorrido desde que la abre hasta que obtiene el resultado puede acercarme a una herramienta a la que vuelva cuando la necesite."
+    },
+    {
+      "text": "Desarrollo cosas que antes no existían.",
+      "reason": "Incluso entre las herramientas existentes puede haber tareas sin resolver o procesos desconectados. Creo que en esos huecos se puede encontrar una razón para crear algo nuevo.",
+      "choice": "Busco conectar pasos dispersos o incorporar métodos de otros campos para hacer posible un trabajo que antes era difícil. Cuando las personas realmente pueden hacer más cosas, la novedad adquiere una utilidad clara."
+    },
+    {
+      "text": "Desarrollo para crear, más que para consumir.",
+      "reason": "Si el tiempo y la atención invertidos dejan un resultado o un método aprendido, pueden aprovecharse en la siguiente tarea. Quiero que un uso de la herramienta sirva de apoyo para el próximo intento.",
+      "choice": "Valoro los procesos que permiten crear, corregir, comparar, guardar y reutilizar los resultados. Si al terminar queda algo en manos del usuario, espero que sus posibilidades de hacer cosas por sí mismo se amplíen poco a poco."
+    },
+    {
+      "text": "Reduzco el desperdicio de las pequeñas trabas repetidas.",
+      "reason": "Mover archivos o volver a introducir los mismos valores puede parecer poca cosa una vez, pero la repetición consume tiempo y atención. Creo que una dificultad debe valorarse tanto por el esfuerzo de cada ocasión como por su frecuencia.",
+      "choice": "Busco agrupar los pasos que se repiten a menudo y reducir las peticiones de información que ya se ha proporcionado. Menos trabajo de preparación y organización deja más espacio para decidir y crear."
+    },
+    {
+      "text": "Cuestiono las dificultades que hemos normalizado.",
+      "reason": "Los procedimientos antiguos pueden mezclar pasos imprescindibles con otros heredados de limitaciones pasadas. Estar acostumbrados a un paso no demuestra que siga siendo necesario.",
+      "choice": "Quiero preguntar «¿Por qué hay que pasar por esta etapa?» y comprobar si la razón sigue siendo válida hoy. Encontrar dónde han cambiado las limitaciones puede permitir eliminar pasos, además de explicar mejor cómo realizarlos."
+    },
+    {
+      "text": "Valoro también las necesidades minoritarias.",
+      "reason": "El número de usuarios y la profundidad de la dificultad que vive una persona son criterios distintos. Aunque pocas personas necesiten una herramienta, si no hay alternativas adecuadas, una pequeña solución puede determinar si una tarea es posible.",
+      "choice": "Quiero considerar lo concreta que es la necesidad, la gravedad de la dificultad y la existencia de otras soluciones. Creo que el desarrollo también tiene valor cuando ofrece una vía realmente útil a quienes disponían de pocas opciones."
+    },
+    {
+      "text": "Comprendo el propósito real de una petición.",
+      "reason": "«Añade un botón» puede significar que se desean menos pasos o una forma más clara de comprobar un resultado. Fijarse solo en la función propuesta puede ocultar el problema que debe resolver.",
+      "choice": "Quiero comprender primero la situación que originó la petición y el resultado deseado, y después buscar una solución adecuada. Un propósito claro ayuda a elegir las funciones necesarias y a reducir de forma más directa el esfuerzo del usuario."
+    },
+    {
+      "text": "Escucho a quienes realmente usan mis herramientas.",
+      "reason": "El proceso que imagino al desarrollar puede diferir del que ocurre en un entorno real. Dónde se detienen las personas y qué les cuesta entender debe comprobarse mediante el uso efectivo.",
+      "choice": "Quiero escuchar el contexto de los comentarios y los puntos de bloqueo, y comprobar tras la modificación si el problema sigue presente. Repetir este proceso puede reducir la distancia entre mis expectativas y el uso real, y aclarar qué mejoras deben ir primero."
+    },
+    {
+      "text": "Hago que la tecnología compleja sea fácil para cualquiera.",
+      "reason": "Si antes de acceder a una función hay que aprender términos y ajustes difíciles, sus beneficios solo llegan a quienes superan esa barrera. Es necesario distinguir lo que el usuario debe entender de lo que la herramienta puede resolver por él.",
+      "choice": "Quiero priorizar un lenguaje que exprese el propósito, valores predeterminados adecuados a la situación y respuestas que permitan comprobar los resultados. Los controles precisos deben estar disponibles cuando hagan falta, para que los principiantes puedan empezar y los usuarios experimentados profundizar."
+    },
+    {
+      "text": "Creo herramientas útiles en la práctica.",
+      "reason": "La utilidad de una función se comprueba en cuánto facilita terminar un trabajo real. Si introducir datos es engorroso o el resultado es difícil de entender y obtener, su ayuda disminuye en ese punto.",
+      "choice": "Quiero revisar la exactitud, la claridad y el esfuerzo necesario desde el inicio hasta el aprovechamiento del resultado. Si el usuario puede continuar de forma natural con su siguiente tarea, la utilidad que motivó el desarrollo se confirma en la práctica."
+    },
+    {
+      "text": "Puedo explicar por qué debe existir cada función.",
+      "reason": "Añadir una función aumenta no solo el trabajo de implementación, sino también lo que los usuarios deben comprender y lo que habrá que mantener. Si su aportación no está clara, es difícil justificar la complejidad que introduce.",
+      "choice": "Quiero definir el problema que resuelve cada función, cuándo hace falta y cómo determinar si funciona bien. Una razón de ser clara facilita priorizar incorporaciones y cambios, y mantener coherente el propósito de la herramienta."
+    },
+    {
+      "text": "Desarrollo con una lógica basada en evidencias.",
+      "reason": "Elegir solo un método conocido o un resultado que parece convincente dificulta explicar en qué condiciones funciona bien. Hay que examinar tanto el mecanismo como los resultados observados para evaluar la validez de la elección.",
+      "choice": "Quiero explicar la relación entre el problema, el método elegido y los resultados comprobados. Hacer visibles los fundamentos de una decisión ayuda a corregir elecciones equivocadas y a determinar mejor dónde empezar la próxima mejora."
+    },
+    {
+      "text": "Distingo las suposiciones de los hechos comprobados.",
+      "reason": "Tratar una premisa no verificada como un hecho transmite la misma incertidumbre a las decisiones posteriores. En el análisis y la estimación, especialmente, importan las condiciones y el alcance de la comprobación.",
+      "choice": "Quiero separar lo conocido, lo estimado y lo que aún necesita comprobarse, y señalar el alcance de la validación. Esto ofrece al usuario una base para interpretar los resultados y permite al desarrollador ver con más claridad qué debe investigar después."
+    },
+    {
+      "text": "Conecto conocimientos para abrir nuevas posibilidades.",
+      "reason": "Distintos campos pueden afrontar problemas parecidos al medir cambios, encontrar patrones y ajustar resultados. Un método aprendido en un campo puede ofrecer una pista para superar un obstáculo en otro.",
+      "choice": "Quiero conectar conocimientos de fotografía, sonido e interfaces, comprobando que los métodos trasladados sigan siendo válidos en sus nuevas condiciones. Espero que estas conexiones unan funciones separadas en un mismo proceso y abran nuevas formas de crear."
+    },
+    {
+      "text": "Proceso los datos en el dispositivo siempre que es posible.",
+      "reason": "Enviar archivos a otro lugar añade tiempo de transferencia y dependencia de la red. Cuando una tarea puede completarse en el dispositivo, existe la posibilidad de diseñar un proceso sin transmitir los originales.",
+      "choice": "Quiero completar localmente tantos procesos como permitan la carga de trabajo y la capacidad del dispositivo, y explicar dónde se procesan los archivos. Espero reducir transferencias innecesarias y dar a las personas un control más directo de su trabajo y sus datos."
+    },
+    {
+      "text": "Logro el rendimiento necesario con los mínimos recursos.",
+      "reason": "Los dispositivos difieren en potencia, memoria y tamaño de pantalla, por lo que un diseño exigente puede limitar los entornos donde una herramienta resulta utilizable. Para admitir distintos dispositivos hay que considerar tanto el acceso como la carga de funcionamiento real.",
+      "choice": "Desarrollo para la web para reducir las barreras entre sistemas operativos, **tomo el diseño adaptable como base y optimizo el rendimiento todo lo posible.** Según la calidad y la respuesta necesarias, busco reducir cálculos y memoria innecesarios para mantener la utilidad en pantallas pequeñas y dispositivos limitados."
+    },
+    {
+      "text": "Preveo que los servicios externos pueden dejar de funcionar.",
+      "reason": "La disponibilidad y la forma de prestación de un servicio externo están fuera de mi control. Si el fallo de una sola dependencia afecta a toda la tarea, el trabajo del usuario también puede interrumpirse.",
+      "choice": "Quiero revisar las dependencias esenciales y diseñar alternativas, información clara sobre las interrupciones y formas de conservar el trabajo en curso. Reducir el impacto y aclarar cómo recuperarse facilita decidir el siguiente paso durante una interrupción."
+    },
+    {
+      "text": "Hago que los resultados sean comparables y reproducibles.",
+      "reason": "Si cambian las entradas o los ajustes, es difícil saber si una diferencia en el resultado se debe a una mejora o a otras condiciones. Conservar las condiciones de comparación ayuda a acotar la causa del cambio.",
+      "choice": "Quiero registrar las entradas, los ajustes, las versiones y otros factores que influyen en el resultado, para poder comprobarlo de nuevo en las mismas condiciones. Comparar y reproducir permite seguir los problemas y verificar con más precisión los efectos de las modificaciones."
+    },
+    {
+      "text": "Expongo con claridad las limitaciones y los problemas conocidos.",
+      "reason": "Para aprovechar bien los resultados, hay que conocer tanto las condiciones en las que la herramienta funciona bien como aquellas que exigen una interpretación cuidadosa. Sin límites visibles, cuesta decidir hasta dónde confiar en ella.",
+      "choice": "Quiero explicar el alcance admitido, los problemas conocidos y los resultados que son estimaciones allí donde esa información haga falta. Ayudar a juzgar si la herramienta sirve para un propósito y a revisar los resultados cuando sea necesario es una base de confianza."
+    },
+    {
+      "text": "Desarrollo para poder mantener y mejorar con el tiempo.",
+      "reason": "Las herramientas necesitan cambios cuando evolucionan los entornos y las necesidades. Si cuesta entender su estructura y las razones de las decisiones, incluso pequeños cambios requieren mucho tiempo y las mejoras necesarias pueden retrasarse.",
+      "choice": "Quiero definir responsabilidades claras en la estructura, registrar por qué se toman las decisiones y disponer de formas de comprobar los efectos de los cambios. Si mi yo futuro y quienes colaboren pueden entender la herramienta con más facilidad, tendremos más posibilidades de corregir problemas y prolongar su utilidad."
+    }
+  ],
+  "closing_lead": "Descubrir una necesidad, desarrollar con fundamento y mantener la utilidad.",
+  "closing": "Establecí estos dos decálogos para que ese proceso sea la base de mis decisiones de desarrollo.",
+  "hero_alt": "Yeony — Pequeñas ideas. Posibilidades útiles. Herramientas para la fotografía, el sonido y la creación.",
+  "toolkit_alt": "Mis tecnologías principales son HTML, CSS y JavaScript. Creo herramientas que funcionan en el navegador.",
+  "principles_alt": "Decálogo del valor para el usuario y decálogo de desarrollo de Yeony. Cada panel muestra los principios del 1 al 10. Despliega las secciones siguientes para leer el texto completo y las razones de cada principio.",
+  "footer_alt": "Un poco de curiosidad. Una herramienta útil. — Yeony",
+  "art_description": "Ilustraciones con volumen y suaves colores de aurora, compatibles con la preferencia de movimiento reducido. Los gráficos de los proyectos representan sus funciones; no son capturas de pantalla ni resultados medidos.",
+  "art": {
+    "YEONY / DIGITAL WORKSHOP": "YEONY / TALLER DIGITAL",
+    "Yeony.": "Yeony.",
+    "Small ideas.": "Pequeñas ideas.",
+    "Useful possibilities.": "Posibilidades útiles.",
+    "AUDIO / IMAGING / CODE": "SONIDO / IMAGEN / CÓDIGO",
+    "01 / OBSERVE": "01 / OBSERVAR",
+    "Find the friction.": "Detectar las trabas.",
+    "02 / EXPERIMENT": "02 / EXPERIMENTAR",
+    "Follow the evidence.": "Seguir la evidencia.",
+    "03 / CREATE": "03 / CREAR",
+    "Make it useful.": "Dar utilidad.",
+    "YEONY TOOLS": "HERRAMIENTAS DE YEONY",
+    "One image. New layers.": "Una imagen. Nuevas capas.",
+    "Bring negatives to light.": "Devolver la luz a los negativos.",
+    "Find the harmony.": "Encontrar la armonía.",
+    "Give sound a little soul.": "Dar alma al sonido.",
+    "More room for every detail.": "Más espacio para cada detalle.",
+    "A little analog nostalgia.": "Un toque de nostalgia analógica.",
+    "ILLUSTRATION / IMAGE TO PSD": "ILUSTRACIÓN / IMAGEN A PSD",
+    "FILM SCANS / COLOR / LIGHT": "ESCANEOS DE PELÍCULA / COLOR / LUZ",
+    "CHORDS / RHYTHM / PIANO": "ACORDES / RITMO / PIANO",
+    "AUDIO / TONE / DYNAMICS / SPACE": "SONIDO / TIMBRE / DINÁMICA / ESPACIO",
+    "IMAGE / RECONSTRUCTION / SCALE": "IMAGEN / RECONSTRUCCIÓN / AMPLIACIÓN",
+    "COLOR / GRAIN / HALATION": "COLOR / GRANO / HALACIÓN",
+    "NEGATIVE": "NEGATIVO",
+    "POSITIVE": "POSITIVO",
+    "TONE": "TIMBRE",
+    "DYNAMICS": "DINÁMICA",
+    "SPACE": "ESPACIO",
+    "1x": "1x",
+    "4x": "4x",
+    "BROWSER FIRST.": "EL NAVEGADOR, PRIMERO.",
+    "ONE WEB. MANY DEVICES.": "UNA WEB. MUCHOS DISPOSITIVOS.",
+    "A little curiosity.": "Un poco de curiosidad.",
+    "A useful thing.": "Una herramienta útil.",
+    "YEONY": "YEONY",
+    "Illustracy": "Illustracy",
+    "Posity": "Posity",
+    "Chordity": "Chordity",
+    "Analog Soul": "Alma analógica",
+    "Upscaly": "Upscaly",
+    "Film Filter Studio": "Estudio de filtros analógicos"
+  }
+}

@@ -1,6 +1,6 @@
 # Profile artwork
 
-Rebuild the four localized READMEs, eighty desktop/mobile SVGs, and eight
+Rebuild the six localized READMEs, 120 desktop/mobile SVGs, and twelve
 language buttons with Python 3:
 
 ```sh
@@ -8,7 +8,7 @@ python tools/profile/build.py
 ```
 
 The build uses only the standard library. `locales/ko.json`, `en.json`,
-`ja.json`, and `zh.json` are the text sources. Each includes all twenty
+`ja.json`, `zh.json`, `fr.json`, and `es.json` are the text sources. Each includes all twenty
 principles and both explanatory paragraphs for each principle. Chinese uses
 simplified characters; the creator's supplied name character is **延**.
 Keep canonical repository names and destinations in `PROJECTS` even when
@@ -31,9 +31,24 @@ python tools/profile/subset_fonts.py /path/to/otfs
 python tools/profile/build.py
 ```
 
+French and Spanish use the existing Latin fonts with outlined accented
+characters and punctuation. To add Latin characters, put the official
+[Noto Sans Regular and Bold TTFs](https://github.com/notofonts/noto-fonts/tree/main/hinted/ttf/NotoSans)
+and `DejaVuSansMono.ttf` in one folder and run:
+
+```sh
+python tools/profile/extend_latin_glyphs.py /path/to/fonts
+python tools/profile/build.py
+```
+
+This preserves the existing glyphs and adds only missing characters. Font
+licenses remain in `FONT-LICENSES.txt`.
+
 Korean artwork remains in `assets/aurora/`. Other languages use its `en/`,
-`ja/`, and `zh/` subdirectories. Language buttons use absolute GitHub links,
+`ja/`, `zh/`, `fr/`, and `es/` subdirectories. Language buttons use absolute GitHub links,
 so they work from both the profile and rendered repository Markdown pages.
+The six compact buttons fit the main desktop profile width and wrap naturally
+on narrower screens.
 Every language uses the same artwork geometry, palette, CSS/SMIL motion,
 and desktop/mobile arrangement. Only text, text-fitting, and accessibility
 descriptions change. Technical identifiers such as HTML, CSS, JavaScript,
