@@ -1,5 +1,5 @@
 <p align="center">
-<picture><source media="(max-width: 640px)" srcset="assets/studio/hero-mobius-smooth-mobile.svg" /><img src="assets/studio/hero-mobius-smooth.svg" width="100%" alt="Yeony — 작은 아이디어를 쓸모 있는 가능성으로. 사진·음향·창작 도구를 만듭니다." /></picture>
+<picture><source media="(max-width: 640px)" srcset="assets/aurora/hero-mobile.svg" /><img src="assets/aurora/hero.svg" width="100%" alt="Yeony — 작은 아이디어를 쓸모 있는 가능성으로. 사진·음향·창작 도구를 만듭니다." /></picture>
 </p>
 
 <h1 align="center">쓸 것보다, 쓰임받을 것을.</h1>
@@ -15,33 +15,42 @@
 </p>
 
 <p align="center">
-  <a href="#projects"><strong>프로젝트 탐색 ↘</strong></a>　·　
+  <a href="#projects"><strong>여섯 가지 프로젝트 ↘</strong></a>　·　
   <a href="#approach">만드는 방식</a>　·　
   <a href="#principles">개발 철학</a>　·　
   <a href="https://github.com/Velvitty?tab=repositories">모든 저장소 ↗</a>
 </p>
 
-<p align="center"><picture><source media="(max-width: 640px)" srcset="assets/studio/stack-mobile.svg" /><img src="assets/studio/stack.svg" width="100%" alt="주로 사용하는 기술은 HTML, CSS, JavaScript입니다. 브라우저에서 동작하는 도구를 만듭니다." /></picture></p>
+<p align="center"><picture><source media="(max-width: 640px)" srcset="assets/aurora/toolkit-mobile.svg" /><img src="assets/aurora/toolkit.svg" width="100%" alt="주로 사용하는 기술은 HTML, CSS, JavaScript입니다. 브라우저에서 동작하는 도구를 만듭니다." /></picture></p>
 
 <a id="projects"></a>
 
 ## 아이디어가 도구가 되는 곳
 
-사진의 색을 다시 찾고, 소리의 구조를 읽고, 창작의 다음 단계를 열어 주는 도구들입니다. **카드를 누르면 프로젝트로 이동합니다.**
+사진의 색을 다시 찾고, 소리의 구조를 읽고, 창작의 다음 단계를 열어 주는 여섯 가지 도구입니다. **카드를 누르면 프로젝트로 이동합니다.**
 
 <p align="center">
-  <a href="https://github.com/Velvitty/Illustracy"><picture><source media="(max-width: 640px)" srcset="assets/studio/illustracy-layers-compact.svg" /><img src="assets/studio/illustracy-layers.svg" width="60%" alt="Illustracy: 일러스트를 분석해 편집 가능한 레이어와 PSD로 재구성합니다." /></picture></a>
-  <a href="https://github.com/Velvitty/Scanner"><picture><source media="(max-width: 640px)" srcset="assets/studio/posity-compact.svg" /><img src="assets/studio/posity.svg" width="38%" alt="Posity: 컬러 네거티브 스캔을 사진으로 변환하고 색과 밝기를 조절합니다." /></picture></a>
+  <a href="https://github.com/Velvitty/Illustracy"><picture><source media="(max-width: 640px)" srcset="assets/aurora/illustracy-mobile.svg" /><img src="assets/aurora/illustracy.svg" width="100%" alt="Illustracy: 병합된 일러스트를 분석해 편집 가능한 레이어와 PSD로 재구성합니다. 러프와 가려진 배경은 추정해 보완합니다." /></picture></a>
 </p>
 
 <p align="center">
-  <a href="https://github.com/Velvitty/Chordity"><picture><source media="(max-width: 640px)" srcset="assets/studio/chordity-1200ms-compact.svg" /><img src="assets/studio/chordity-1200ms.svg" width="38%" alt="Chordity: 음원의 코드와 박을 추정하고, 메트로놈과 합성 피아노로 확인합니다." /></picture></a>
-  <a href="https://github.com/Velvitty/efx"><picture><source media="(max-width: 640px)" srcset="assets/studio/analog-soul-compact.svg" /><img src="assets/studio/analog-soul.svg" width="60%" alt="Analog Soul: 아날로그 질감과 공간 효과를 조절하고 WAV로 내보냅니다." /></picture></a>
+  <a href="https://github.com/Velvitty/Scanner"><picture><source media="(max-width: 640px)" srcset="assets/aurora/posity-mobile.svg" /><img src="assets/aurora/posity.svg" width="100%" alt="Posity: 컬러 네거티브 스캔을 사진으로 변환하고, 밝기·색 균형을 조절하며 여러 장을 한꺼번에 내보냅니다." /></picture></a>
 </p>
 
 <p align="center">
-  <a href="https://github.com/Velvitty/Film_Sim"><picture><source media="(max-width: 640px)" srcset="assets/studio/film-studio-compact.svg" /><img src="assets/studio/film-studio.svg" width="49%" alt="Film Filter Studio: 필름 색감·그레인·할레이션과 빈티지 렌즈 효과를 적용합니다." /></picture></a>
-  <a href="https://github.com/Velvitty/Photo_Scorer"><picture><source media="(max-width: 640px)" srcset="assets/studio/photo-score-sky80-compact.svg" /><img src="assets/studio/photo-score-sky80.svg" width="49%" alt="Photo Score: 사진의 수치적 특징을 분석하고 촬영·후보정 팁을 제공합니다." /></picture></a>
+  <a href="https://github.com/Velvitty/Chordity"><picture><source media="(max-width: 640px)" srcset="assets/aurora/chordity-mobile.svg" /><img src="assets/aurora/chordity.svg" width="100%" alt="Chordity: 음원의 마디별 코드와 박을 추정하고, 박에 맞춘 메트로놈과 합성 피아노로 확인합니다." /></picture></a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/Velvitty/efx"><picture><source media="(max-width: 640px)" srcset="assets/aurora/analog-soul-mobile.svg" /><img src="assets/aurora/analog-soul.svg" width="100%" alt="Analog Soul: 아날로그 음색·다이내믹스·공간 효과와 고역 보완을 조절하고 WAV로 내보냅니다." /></picture></a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/Velvitty/Upscaly"><picture><source media="(max-width: 640px)" srcset="assets/aurora/upscaly-mobile.svg" /><img src="assets/aurora/upscaly.svg" width="100%" alt="Upscaly: 이미지의 종류와 상태를 분석해 확대하고, 선형광 보간·윤곽 보정·16비트 PNG 저장을 지원합니다." /></picture></a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/Velvitty/Film_Sim"><picture><source media="(max-width: 640px)" srcset="assets/aurora/film-filter-studio-mobile.svg" /><img src="assets/aurora/film-filter-studio.svg" width="100%" alt="Film Filter Studio: 필름 색감·그레인·할레이션과 빈티지 렌즈 효과를 적용합니다." /></picture></a>
 </p>
 
 <details>
@@ -49,14 +58,14 @@
 
 | 프로젝트 | 할 수 있는 일 |
 | --- | --- |
-| [Illustracy](https://github.com/Velvitty/Illustracy) | 일러스트를 분석해 편집 가능한 레이어와 PSD로 재구성합니다. |
-| [Posity](https://github.com/Velvitty/Scanner) | 컬러 네거티브 스캔을 사진으로 변환하고 색과 밝기를 조절합니다. |
-| [Chordity](https://github.com/Velvitty/Chordity) | 음원의 코드와 박을 추정하고, 메트로놈과 합성 피아노로 확인합니다. |
-| [Analog Soul](https://github.com/Velvitty/efx) | 아날로그 질감과 공간 효과를 조절하고 WAV로 내보냅니다. |
+| [Illustracy](https://github.com/Velvitty/Illustracy) | 병합된 일러스트를 분석해 편집 가능한 레이어와 PSD로 재구성합니다. 러프와 가려진 배경은 추정해 보완합니다. |
+| [Posity](https://github.com/Velvitty/Scanner) | 컬러 네거티브 스캔을 사진으로 변환하고, 밝기·색 균형을 조절하며 여러 장을 한꺼번에 내보냅니다. |
+| [Chordity](https://github.com/Velvitty/Chordity) | 음원의 마디별 코드와 박을 추정하고, 박에 맞춘 메트로놈과 합성 피아노로 확인합니다. |
+| [Analog Soul](https://github.com/Velvitty/efx) | 아날로그 음색·다이내믹스·공간 효과와 고역 보완을 조절하고 WAV로 내보냅니다. |
+| [Upscaly](https://github.com/Velvitty/Upscaly) | 이미지의 종류와 상태를 분석해 확대하고, 선형광 보간·윤곽 보정·16비트 PNG 저장을 지원합니다. |
 | [Film Filter Studio](https://github.com/Velvitty/Film_Sim) | 필름 색감·그레인·할레이션과 빈티지 렌즈 효과를 적용합니다. |
-| [Photo Score](https://github.com/Velvitty/Photo_Scorer) | 사진의 수치적 특징을 분석하고 촬영·후보정 팁을 제공합니다. |
 
-레이어 분리와 코드 인식은 원본을 분석해 얻는 추정 결과이며, 사진 점수는 수치와 규칙에 기반한 참고 지표입니다. 사용 방법과 각 도구의 한계는 프로젝트 문서에서 확인할 수 있습니다.
+레이어 분리·러프와 배경 보완·코드 인식은 원본을 분석해 얻는 추정 결과입니다. 음원의 고역 보완과 이미지 확대도 손실된 원본 정보를 완전히 복구한다는 뜻은 아닙니다. 사용 방법과 각 도구의 한계는 프로젝트 문서에서 확인할 수 있습니다.
 
 </details>
 
@@ -82,7 +91,7 @@
 
 <!-- principles-glass-start -->
 <p align="center">
-  <picture><source media="(max-width: 640px)" srcset="assets/studio/principles-glass-readable-mobile.svg" /><img src="assets/studio/principles-glass-readable.svg" width="100%" alt="이용자 가치 지향 10계명과 연이 개발 지향 10계명. 각 카드에 원칙 1번부터 10번까지 담았습니다. 전체 원문과 각 원칙의 이유는 아래에서 펼쳐 읽을 수 있습니다." /></picture>
+  <picture><source media="(max-width: 640px)" srcset="assets/aurora/principles-mobile.svg" /><img src="assets/aurora/principles.svg" width="100%" alt="이용자 가치 지향 10계명과 연이 개발 지향 10계명. 각 카드에 원칙 1번부터 10번까지 담았습니다. 전체 원문과 각 원칙의 이유는 아래에서 펼쳐 읽을 수 있습니다." /></picture>
 </p>
 <!-- principles-glass-end -->
 
@@ -222,14 +231,8 @@
 
 **필요를 발견하고, 근거로 구현하고, 오래 쓰이게 하는 것.** 이 흐름을 개발의 판단 기준으로 삼기 위해 두 가지 10계명을 세웠습니다.
 
-<details>
-<summary><strong>더 둘러보기</strong></summary>
 
-- [MacGuard](https://github.com/Velvitty/MacGuard) — 브라우저 안에서 잠금 화면과 이벤트 경보를 제공하는 도구입니다.
-- [전체 저장소](https://github.com/Velvitty?tab=repositories)
-
-</details>
 
 <br />
 
-<p align="center"><picture><source media="(max-width: 640px)" srcset="assets/studio/footer-mobile.svg" /><img src="assets/studio/footer.svg" width="100%" alt="작은 호기심에서, 쓸모 있는 도구로. — Yeony" /></picture></p>
+<p align="center"><picture><source media="(max-width: 640px)" srcset="assets/aurora/footer-mobile.svg" /><img src="assets/aurora/footer.svg" width="100%" alt="작은 호기심에서, 쓸모 있는 도구로. — Yeony" /></picture></p>
