@@ -1,0 +1,193 @@
+{
+  "lang": "en",
+  "name": "English",
+  "display_name": "Yeony",
+  "headline": "Build for others to use, not just for myself.",
+  "hello": "Hello, I’m <strong>Yeony</strong>.",
+  "intro": "I turn the principles of sound, photography, and creativity into tools anyone can use.",
+  "promise": "Different devices. The same usefulness.",
+  "pillars": "Cross-platform · Performance optimization · Responsive design",
+  "nav": [
+    "Six projects ↘",
+    "How I build",
+    "My principles",
+    "All repositories ↗"
+  ],
+  "projects_title": "Where ideas become tools",
+  "projects_intro": "Six tools to recover photographic color, explore the structure of sound, and open the next step in creating.",
+  "projects_hint": "Select a card to open its project.",
+  "project_details": "Explore each project’s features",
+  "table_headers": [
+    "Project",
+    "What it does"
+  ],
+  "project_names": [
+    "Illustracy",
+    "Posity",
+    "Chordity",
+    "Analog Soul",
+    "Upscaly",
+    "Film Filter Studio"
+  ],
+  "project_descriptions": [
+    "Analyzes flattened illustrations and reconstructs editable layers and PSD files. Rough sketches and occluded backgrounds are estimated and filled in.",
+    "Converts color-negative scans into photographs, adjusts brightness and color balance, and exports multiple images in a batch.",
+    "Estimates chords by bar and detects beats in audio, then lets you check them with a beat-synced metronome and synthesized piano.",
+    "Adjusts analog tone, dynamics, spatial effects, and high-frequency enhancement, with WAV export.",
+    "Analyzes image type and condition before enlarging it, with linear-light interpolation, edge refinement, and 16-bit PNG export.",
+    "Applies film color, grain, halation, and vintage-lens effects."
+  ],
+  "limitations": "Layer separation, rough-sketch and background completion, and chord recognition produce estimates based on an analysis of the source. High-frequency enhancement and image enlargement do not fully recover lost original information either. Each project’s documentation explains how to use it and where its limits lie.",
+  "approach_title": "From complex principles to simple use",
+  "approach": [
+    [
+      "Usefulness comes first.",
+      "I question inconveniences we have come to accept and start with the voices of people who actually use the tools."
+    ],
+    [
+      "I build on evidence.",
+      "I distinguish assumptions from verified facts and explain the principles and limits behind a result, as well as the result itself."
+    ],
+    [
+      "Small needs matter too.",
+      "I value needs shared by only a few people and refine complex technology until anyone can use it."
+    ],
+    [
+      "I work across device boundaries.",
+      "I build for the web to avoid tying tools to one operating system, with optimization and responsive design as the foundation."
+    ]
+  ],
+  "principles_title": "Two sets of ten principles for useful tools",
+  "principles_lead": "I believe the value of development lies in making someone’s next action possible.",
+  "principles_intro": "When a need is misunderstood, even a sophisticated feature can struggle to find a use. When a needed feature is slow or unreliable, that usefulness is hard to sustain. I therefore set out **what I build for** in “Ten Principles for User Value” and **how I protect that value** in “Yeony’s Ten Development Principles.” These are the criteria I want to revisit whenever I add a feature or change direction.",
+  "principles_groups": [
+    {
+      "title": "Ten Principles for User Value",
+      "question": "What am I building for?",
+      "intro": "These principles begin with people’s needs and aim for outcomes that actually help.",
+      "short_title": "User value",
+      "eyebrow": "01 / USER VALUE",
+      "footer": "From a real need to real use."
+    },
+    {
+      "title": "Yeony’s Ten Development Principles",
+      "question": "How do I protect that value?",
+      "intro": "These are the standards I want to uphold so needed features work reliably across environments and can keep improving over time.",
+      "short_title": "Development",
+      "eyebrow": "02 / DEVELOPMENT",
+      "footer": "Built on evidence. Made to last."
+    }
+  ],
+  "reason_label": "Reason and basis",
+  "choice_label": "Choice and expectation",
+  "principles": [
+    {
+      "text": "I build things for others to use, not just for myself.",
+      "reason": "A way of working that feels familiar to its maker will not necessarily feel natural to a first-time user. Convenience for me alone does not tell me whether a tool will help someone else’s work.",
+      "choice": "I want to begin by asking who will seek out this tool, in what situation, and to finish what task. Following that person’s workflow from opening it to taking away a result can bring it closer to a tool they return to when they need it."
+    },
+    {
+      "text": "I build things that did not exist before.",
+      "reason": "Even among existing tools, there may be unresolved tasks or disconnected workflows. I believe those gaps can provide a reason to make something new.",
+      "choice": "I aim to connect scattered steps or bring in methods from other fields to make previously difficult work possible. When people can actually do more, novelty gains a clear purpose."
+    },
+    {
+      "text": "I build for creation rather than consumption.",
+      "reason": "When time and attention leave behind an output or a learned method, they can carry into the next task. I want one use of a tool to become a stepping stone to the next attempt.",
+      "choice": "I value workflows that let people make, revise, compare, save, and reuse their results. If something remains in their hands after using a tool, I hope their ability to do things for themselves will gradually expand."
+    },
+    {
+      "text": "I reduce the waste that repeated small inconveniences create.",
+      "reason": "Moving files or entering the same values again may seem minor once, but repetition consumes time and attention. I believe an inconvenience should be judged by both the effort of one occurrence and how often it recurs.",
+      "choice": "I aim to group frequently repeated steps and reduce requests for information already provided. Less effort spent on preparation and cleanup leaves more room for judgment and creativity."
+    },
+    {
+      "text": "I question inconveniences we have come to accept.",
+      "reason": "Long-established workflows can mix essential steps with steps left over from past constraints. Familiarity alone does not tell us whether a step is still necessary.",
+      "choice": "I want to ask, “Why must we take this step?” and check whether its reason still applies today. Finding where constraints have changed can make it possible to remove steps, beyond simply explaining them more clearly."
+    },
+    {
+      "text": "I value needs shared by only a few people.",
+      "reason": "The number of users and the depth of one person’s difficulty are different measures. Even if few people need a tool, the lack of a suitable alternative can make one small tool the difference between possible and impossible work.",
+      "choice": "I want to consider how specific the need is, how severe the difficulty is, and whether other solutions exist. I believe development also has value when it gives people with few options a practical way forward."
+    },
+    {
+      "text": "I understand the real purpose behind a user’s request.",
+      "reason": "“Please add a button” may mean wanting fewer steps or a clearer way to check a result. Looking only at the proposed feature can hide the problem it is meant to solve.",
+      "choice": "I want to understand the situation behind a request and the desired outcome first, then find a fitting solution. A clearer purpose helps me choose the right features and reduce people’s effort more directly."
+    },
+    {
+      "text": "I listen to the people who actually use what I build.",
+      "reason": "The workflow I imagine during development may differ from what happens in real environments. Where people stop and what they struggle to understand must be checked through actual use.",
+      "choice": "I want to listen to the context behind feedback and the points where people get stuck, then check whether a change has resolved the issue. Repeating this process can narrow the gap between my expectations and real use and clarify which improvements come first."
+    },
+    {
+      "text": "I make complex technology easy for anyone to use.",
+      "reason": "If people must learn difficult terminology and settings before reaching a feature, its benefits reach only those who cross that threshold. I need to distinguish what the user must understand from what the tool can handle for them.",
+      "choice": "I want to prioritize clear language about purpose, sensible defaults for the situation, and feedback that makes results checkable. Fine controls should be available when needed, so beginners can start and experienced users can go deeper."
+    },
+    {
+      "text": "I build things that are useful in practice.",
+      "reason": "A feature’s usefulness can be seen in how easily it helps someone complete real work. If input is cumbersome or results are hard to understand and take away, its benefit diminishes at that point.",
+      "choice": "I want to examine accuracy, clarity, and effort from the first step through using the result. If people can move naturally into their next task, the usefulness that motivated development can be confirmed in practice."
+    },
+    {
+      "text": "I can explain why each feature needs to exist.",
+      "reason": "Adding a feature expands not only implementation work, but also what users must understand and what must be maintained. When its benefit is unclear, it is hard to justify the complexity it adds.",
+      "choice": "I want to define the problem each feature solves, when it is needed, and how to judge whether it works well. A clear reason for its existence helps prioritize additions and revisions and keeps the tool’s purpose consistent."
+    },
+    {
+      "text": "I build with logic grounded in evidence.",
+      "reason": "Choosing a familiar method or a plausible-looking result alone makes it difficult to explain when it works well. Both the underlying mechanism and observed results are needed to assess a choice.",
+      "choice": "I want to explain the connection between the problem, the chosen method, and the results I checked. Making the basis of a decision visible helps correct poor choices and identify where to begin the next improvement."
+    },
+    {
+      "text": "I distinguish assumptions from verified facts.",
+      "reason": "Treating an untested premise as fact carries the same uncertainty into later decisions. For analysis and estimation in particular, the conditions and extent of verification matter.",
+      "choice": "I want to separate what is known, what is estimated, and what still needs checking, and state the scope of verification. This gives users a basis for interpreting results and helps me see the next question to investigate."
+    },
+    {
+      "text": "I connect knowledge across fields to open new possibilities.",
+      "reason": "Different fields may face similar problems in measuring change, finding patterns, and controlling outcomes. A method learned in one field may offer a way through an obstacle in another.",
+      "choice": "I want to connect knowledge from photography, audio, and interfaces while checking that a borrowed method remains valid under its new conditions. I hope these connections can join separate features into one workflow and open new ways of creating."
+    },
+    {
+      "text": "I keep processing on the user’s device whenever possible.",
+      "reason": "Sending files elsewhere adds transfer time and network dependence. When a task can be completed on the device, there is an opportunity to design a workflow without transmitting the originals.",
+      "choice": "I want to finish as much processing locally as the workload and device capabilities allow, and clearly state where files are processed. I hope to reduce unnecessary transfers and give people more direct control over their work and data."
+    },
+    {
+      "text": "I deliver the needed performance with minimal resources.",
+      "reason": "Devices differ in processing power, memory, and screen size, so a resource-heavy design can narrow the environments where a tool is usable. Supporting many devices means considering both access and the burden of actual operation.",
+      "choice": "I build for the web to lower operating-system barriers, **make responsive design a foundation, and optimize performance as far as possible.** Guided by the quality and responsiveness needed, I aim to reduce unnecessary computation and memory use so the tool stays useful on small screens and limited hardware."
+    },
+    {
+      "text": "I plan for external services to become unavailable.",
+      "reason": "An external service’s availability and delivery model are outside my control. If a single dependency stops an entire task, the user’s workflow can stop with it.",
+      "choice": "I want to examine core dependencies and design fallback paths, clear interruption status, and ways to preserve work in progress. Limiting the impact and making recovery clear helps people choose their next action during an interruption."
+    },
+    {
+      "text": "I make results comparable and reproducible.",
+      "reason": "When inputs or settings differ, it is difficult to tell whether a result changed because of an improvement or because of other conditions. Keeping the comparison conditions helps narrow down the cause.",
+      "choice": "I want to record inputs, settings, versions, and other factors that affect results, so they can be checked again under the same conditions. Comparison and reproduction make tracing problems and verifying the effects of changes more precise."
+    },
+    {
+      "text": "I clearly disclose limitations and known issues.",
+      "reason": "To use results appropriately, people need to know both the conditions where a tool works well and those requiring careful interpretation. Without visible limits, it is hard to judge how far to trust a result.",
+      "choice": "I want to explain supported scope, known issues, and where results are estimates at the points where that information is needed. Helping people judge fitness for their purpose and double-check results when necessary is a basis for trust."
+    },
+    {
+      "text": "I build so the work can be maintained and improved over time.",
+      "reason": "Tools need changes as environments and needs evolve. If their structure and the reasons behind choices are hard to understand, even small changes take time and needed improvements can be delayed.",
+      "choice": "I want clear responsibilities in the structure, records of why choices were made, and ways to check the effects of changes. If my future self and others working on the tool can understand it more easily, we have a better chance of fixing problems and keeping it useful."
+    }
+  ],
+  "closing_lead": "Discover a need, build on evidence, and keep it useful.",
+  "closing": "I established these two sets of ten principles to make that process the basis of my development decisions.",
+  "hero_alt": "Yeony — Small ideas. Useful possibilities. Tools for photography, audio, and creativity.",
+  "toolkit_alt": "My main technologies are HTML, CSS, and JavaScript. I build tools that run in the browser.",
+  "principles_alt": "Ten Principles for User Value and Yeony’s Ten Development Principles. Each panel lists principles 1–10. Expand the sections below to read the full text and the reasoning behind each principle.",
+  "footer_alt": "A little curiosity. A useful thing. — Yeony",
+  "art_description": "Dimensional artwork in soft aurora colors, with reduced-motion support. Project artwork illustrates functionality; it is not an app screenshot or a measured result.",
+  "art": {}
+}

@@ -26,6 +26,21 @@ GOLD = '#ffe5a8'
 LILAC = '#bfa9ff'
 LINE = '#57496f'
 FONTS = json.loads((ROOT/'tools/profile/latin-glyphs.json').read_text())
+FONTS.update(json.loads((ROOT/'tools/profile/cjk-glyphs.json').read_text()))
+LOCALES = {lang: json.loads((ROOT/f'tools/profile/locales/{lang}.json').read_text()) for lang in ('ko','en','ja','zh')}
+LANG = 'ko'
+COPY = LOCALES[LANG]
+TEXT_BOUNDS = []
+
+def tr(text):
+    return COPY['art'].get(text, text)
+
+def text_family(text, family):
+    if family.startswith('cjk-'):
+        return family
+    if family == 'ko' or any(ord(c) > 0x2ff for c in text):
+        return 'cjk-'+('ko' if LANG == 'en' else LANG)+('-bold' if family == 'bold' else '')
+    return family
 PRINCIPLES = ET.parse(OLD/'principles-glass-readable.svg').getroot()
 KO = {e.get('id')[5:]:e.get('d') for e in PRINCIPLES.iter() if e.get('id','').startswith('g-ko-')}
 
@@ -36,20 +51,29 @@ def glyph(ch, family):
         if key not in KO: raise ValueError('Missing Korean outline: '+ch)
         return KO[key], 940 if ord(ch)>0x2fff else (280 if ch=='.' else 583), 1000
     v = FONTS[family]
+    if ch not in v['chars']:
+        v=FONTS['cjk-'+('ko' if LANG=='en' else LANG)]
     g = v['chars'][ch]
     return g['d'], g['advance'], v['units']
 
 def text_width(s,size,family='regular',tracking=0):
+    s=tr(s);family=text_family(s,family)
     return sum(glyph(c,family)[1]*size/glyph(c,family)[2]+tracking for c in s)
 
 class SVG:
     def __init__(self,w,h,title,desc):
         self.w,self.h,self.title,self.desc=w,h,title,desc
         self.defs=[];self.body=[];self.css=[];self.glyphs={}
+        self.check_text_bounds=True
     def add(self,s): self.body.append(s)
-    def text(self,s,x,y,size=22,color=INK,family='regular',tracking=0,anchor='start'):
+    def text(self,s,x,y,size=22,color=INK,family='regular',tracking=0,anchor='start',max_width=None):
+        s=tr(s);family=text_family(s,family)
+        if max_width:
+            size=min(size, size*max_width/max(text_width(s,size,family,tracking),1))
         if anchor=='end': x-=text_width(s,size,family,tracking)
         if anchor=='middle': x-=text_width(s,size,family,tracking)/2
+        if self.check_text_bounds:
+            TEXT_BOUNDS.append((LANG,self.title,s,x,y,text_width(s,size,family,tracking),size,self.w,self.h))
         paths=[];cursor=0
         for c in s:
             d,adv,u=glyph(c,family);gid=f't-{family}-{ord(c):x}'
@@ -67,7 +91,7 @@ class SVG:
     def write(self,name):
         defs=''.join(self.defs)+''.join(f'<path id="{key}" d="{d}"/>' for key,d in sorted(self.glyphs.items()))
         css=''.join(self.css)+'@media(prefers-reduced-motion:reduce){.motion{display:none!important}.still{display:inline!important}*{animation:none!important}}'
-        out=f'<svg xmlns="{NS}" width="{self.w}" height="{self.h}" viewBox="0 0 {self.w} {self.h}" role="img" aria-labelledby="title desc"><title id="title">{escape(self.title)}</title><desc id="desc">{escape(self.desc)}</desc><defs>{defs}</defs><style>.still{{display:none}}{css}</style>'+''.join(self.body)+'</svg>\n'
+        out=f'<svg xmlns="{NS}" width="{self.w}" height="{self.h}" viewBox="0 0 {self.w} {self.h}" lang="{LANG}" role="img" aria-labelledby="title desc"><title id="title">{escape(self.title)}</title><desc id="desc">{escape(COPY["art_description"])}</desc><defs>{defs}</defs><style>.still{{display:none}}{css}</style>'+''.join(self.body)+'</svg>\n'
         ET.fromstring(out)
         (OUT/name).write_text(out)
 
@@ -136,7 +160,7 @@ def mobius():
                 if e.get('dur')=='16.8s':e.set('dur','5.6s')
                 if e.get('dur')=='30s':e.set('dur','9s')
             if e.get('class')=='mobius-solid':
-                e.set('aria-label','A continuous half-twist in pale white-pink, white-sky and white-yellow; six subtle inlays circulate along its surface.')
+                e.set('aria-label',COPY['hero_alt'])
     defs.extend([ET.fromstring(f'<linearGradient xmlns="{NS}" id="belt-pearl" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#ffc1e2"/><stop offset=".16" stop-color="#fff0f7"/><stop offset=".34" stop-color="#a9dcff"/><stop offset=".49" stop-color="#eaf7ff"/><stop offset=".67" stop-color="#ffdfa0"/><stop offset=".83" stop-color="#fff5da"/><stop offset="1" stop-color="#ffc1e2"/></linearGradient>'),
       ET.fromstring(f'<linearGradient xmlns="{NS}" id="belt-edge"><stop stop-color="#df9bcf"/><stop offset=".45" stop-color="#97c8f8"/><stop offset="1" stop-color="#fff0be"/></linearGradient>'),
       ET.fromstring(f'<linearGradient xmlns="{NS}" id="belt-satin" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fff" stop-opacity=".30"/><stop offset=".44" stop-color="#fff" stop-opacity="0"/><stop offset=".83" stop-color="#626b83" stop-opacity=".13"/><stop offset="1" stop-color="#fff" stop-opacity=".36"/></linearGradient>'),
@@ -145,16 +169,16 @@ def mobius():
 
 def hero(mobile=False):
     w,h=(640,820) if mobile else (1200,580)
-    s=SVG(w,h,'Yeony — Small ideas. Useful possibilities.','A pale aurora Möbius belt with a continuous half-twist and travelling material. Observe, experiment, create. Reduced motion keeps the same complete still composition.')
+    s=SVG(w,h,COPY['hero_alt'],'')
     background(s,PINK)
     ds,art=mobius();s.defs.append(ds)
     s.css.append('.mobius-axes-still,.belt-texture-still{display:none}@media(prefers-reduced-motion:reduce){.mobius-axes-motion,.belt-texture-motion{display:none}.mobius-axes-still,.belt-texture-still{display:inline}}')
     x=36 if mobile else 52
     s.add(s.text('YEONY / DIGITAL WORKSHOP',x,48,13,MUTED,'mono',1.2))
     s.add(circle(w-x-4,43,3.5,PINK))
-    s.add(s.text('Yeony.',x-8,172 if mobile else 220,142 if mobile else 180,'url(#pearl)','bold',-6))
+    s.add(s.text('Yeony.',x-8,172 if mobile else 220,142 if mobile else 180,'url(#pearl)','bold',-6,max_width=556 if mobile else 605))
     for t,y in [('Small ideas.',231 if mobile else 299),('Useful possibilities.',279 if mobile else 355)]:
-        s.add(s.text(t,x,y,39 if mobile else 47,INK if t=='Small ideas.' else SKY,'bold',-1))
+        s.add(s.text(t,x,y,39 if mobile else 47,INK if t=='Small ideas.' else SKY,'bold',-1,max_width=560 if mobile else 610))
     s.add(s.text('AUDIO / IMAGING / CODE',x,320 if mobile else 405,12 if mobile else 14,MUTED,'mono',1.2))
     cx,cy=(320,510) if mobile else (925,263)
     s.add(f'<g transform="translate({cx} {cy}) rotate(-22)"><ellipse rx="265" ry="142" fill="url(#wash)"/>'+path('M-270 12C-138 -169 168 -181 267 -19',PINK,2,extra='opacity=".35"')+path('M-258 40C-96 196 176 133 270 -8',SKY,1.5,extra='opacity=".35"')+'</g>')
@@ -166,7 +190,7 @@ def hero(mobile=False):
     for i,(a,b,c) in enumerate(cols):
         px=x+i*(w-2*x)/3
         s.add(s.text(a,px,y+32,10 if mobile else 12,c,'mono',.6))
-        s.add(s.text(b,px,y+64,16 if mobile else 25,INK,'regular',-.25))
+        s.add(s.text(b,px,y+64,16 if mobile else 25,INK,'regular',-.25,max_width=(w-2*x)/3-24))
         if i:s.add(path(f'M{px-16} {y+22}V{y+66}',LINE,1))
     s.write('hero-mobile.svg' if mobile else 'hero.svg')
 
@@ -174,22 +198,24 @@ def arrow(x,y,color=SKY): return path(f'M{x-16} {y+16}L{x+16} {y-16}M{x-10} {y-1
 
 def project(name,number,tagline,category,artfn,accent,mobile=False):
     w,h=(600,640) if mobile else (1200,416)
-    s=SVG(w,h,name+' — '+tagline,'Original conceptual project artwork, not a screenshot or a measured result. '+artfn.__doc__)
+    s=SVG(w,h,tr(name)+' — '+tr(tagline),'')
     background(s,accent)
     s.add(rect(36 if mobile else 48,25,43,27,accent,13,'fill-opacity=".16"'))
     s.add(s.text(f'{number:02}',47 if mobile else 59,44,12,accent,'mono',1))
     s.add(s.text('YEONY TOOLS',96 if mobile else 110,44,11,MUTED,'mono',1.4))
     if mobile and name=='Film Filter Studio':
-        s.add(s.text('Film Filter Studio',34,103,48,INK,'bold',-1.8))
-    else:s.add(s.text(name,34 if mobile else 45,114 if mobile else 154,58 if mobile else (66 if name!='Film Filter Studio' else 57),INK,'bold',-1.8))
-    s.add(s.text(tagline,36 if mobile else 48,158 if mobile else 201,23 if mobile else 25,MUTED,'regular',-.2))
+        s.add(s.text('Film Filter Studio',34,103,48,INK,'bold',-1.8,max_width=530))
+    else:s.add(s.text(name,34 if mobile else 45,114 if mobile else 154,58 if mobile else (66 if name!='Film Filter Studio' else 57),INK,'bold',-1.8,max_width=530 if mobile else 600))
+    s.add(s.text(tagline,36 if mobile else 48,158 if mobile else 201,23 if mobile else 25,MUTED,'regular',-.2,max_width=528 if mobile else 595))
     # Coloured material swatches connect the typography to each illustration.
     for i,col in enumerate((PINK,SKY,GOLD)):
         s.add(rect((36 if mobile else 48)+i*26,185 if mobile else 243,18,4,col,2))
     s.add(path(f'M{36 if mobile else 48} {h-61}H{w-(36 if mobile else 48)}',LINE,1))
     s.add(s.text(category,36 if mobile else 48,h-27,11 if mobile else 12,accent,'mono',.5))
     s.add(arrow(w-55,h-34,accent))
+    s.check_text_bounds=False
     art=artfn(s)
+    s.check_text_bounds=True
     s.add(f'<g transform="translate({300 if mobile else 906} {381 if mobile else 190}) scale({1.04 if mobile else 1.08})">{art}</g>')
     slug=name.lower().replace(' ','-')
     s.write(slug+('-mobile' if mobile else '')+'.svg')
@@ -393,59 +419,63 @@ def film(s):
     s.css.append('.iris-blade{transform-origin:0 0;animation:iris 2.8s infinite}.iris-pupil{animation:pupil 2.8s infinite}.lens-flare{opacity:0;animation:flare 2.8s infinite}@keyframes iris{0%,100%{transform:translateY(0) rotate(0deg)}24%{transform:translateY(26px) rotate(30deg);animation-timing-function:cubic-bezier(.16,.8,.22,1)}42%{transform:translateY(-8px) rotate(-6deg)}56%{transform:translateY(4px) rotate(4deg)}73%,90%{transform:translateY(0) rotate(0deg)}}@keyframes pupil{0%,100%{transform:scale(1)}24%{transform:scale(.24);animation-timing-function:cubic-bezier(.16,.8,.22,1)}42%{transform:scale(1.34)}56%{transform:scale(.87)}73%,90%{transform:scale(1)}}@keyframes flare{0%,21%,100%{opacity:0;transform:scale(.2)}29%{opacity:1;transform:scale(.8)}48%,90%{opacity:0;transform:scale(1.9)}}')
     return out
 
-def wrap(s,size,width,family='ko'):
+def wrap(s,size,width,family='regular'):
     lines=[];line=''
-    for word in s.split(' '):
-        candidate=line+' '+word if line else word
+    words=list(s) if LANG in ('ja','zh') else s.split(' ')
+    joiner='' if LANG in ('ja','zh') else ' '
+    for word in words:
+        candidate=line+joiner+word if line else word
         if text_width(candidate,size,family)>width and line:
-            lines.append(line);line=word
+            if word in '、。，．？！)]」』':
+                lines.append(line+word);line=''
+            else:
+                lines.append(line);line=word
         else:line=candidate
     if line:lines.append(line)
     return lines
 
 def principles(mobile=False):
     w,h=(600,2112) if mobile else (1200,1044)
-    s=SVG(w,h,'이용자 가치 지향 10계명 · 연이 개발 지향 10계명','The original twenty principles, word for word, in two colour-lit reading panels. Desktop places the panels side by side; mobile stacks them at a readable size. Full rationale remains in the README.')
-    # Reuse the existing Korean outlines to preserve font-independent rendering.
-    groups=[e for e in PRINCIPLES.iter() if e.get('data-principles-card')]
+    s=SVG(w,h,COPY['principles_title'],'')
+    groups=COPY['principles_groups']
     for i,grp in enumerate(groups):
         x,y=(6,i*1062) if mobile else (i*612,0)
         accent=PINK if i==0 else SKY
-        title='이용자 가치 지향' if i==0 else '연이 개발 지향'
-        question='무엇을 위해 만드는가' if i==0 else '그 가치를 어떻게 지킬 것인가'
-        footer='필요에서 시작해, 쓰임으로.' if i==0 else '근거로 구현하고, 오래 쓰이게.'
+        title=grp['short_title'];question=grp['question'];footer=grp['footer']
         s.defs.append(f'<linearGradient id="panel-{i}" x2=".7" y2="1"><stop stop-color="{ "#513b62" if i==0 else "#305471"}"/><stop offset=".2" stop-color="{ "#302640" if i==0 else "#26374f"}"/><stop offset="1" stop-color="#1b1c33"/></linearGradient>')
         s.defs.append(f'<linearGradient id="number-{i}" x2="1" y2="1"><stop stop-color="{accent}"/><stop offset="1" stop-color="{LILAC if i==0 else GOLD}"/></linearGradient>')
         card=rect(x+.7,y+.7,586.6,1042.6,f'url(#panel-{i})',24,f'stroke="{LINE}" stroke-width="1.4"')
         card+=path(f'M{x+34} {y+2}H{x+554}',accent,3.2,extra='opacity=".8"')
         card+=circle(x+504,y+76,59,'none',f'stroke="{accent}" stroke-opacity=".16"')
         card+=circle(x+504,y+76,68,'none',f'stroke="{accent}" stroke-opacity=".08"')
-        card+=s.text('01 / USER VALUE' if i==0 else '02 / DEVELOPMENT',x+34,y+40,11,accent,'mono',1)
-        card+=s.text(title,x+32,y+94,31,INK,'ko')
+        card+=s.text(grp['eyebrow'],x+34,y+40,11,accent,'mono',1)
+        card+=s.text(title,x+32,y+94,31,INK,'bold',max_width=405)
         card+=s.text('10',x+548,y+105,78,accent,'regular',-4,anchor='end')
-        card+=s.text(question,x+35,y+134,19,MUTED,'ko')
+        card+=s.text(question,x+35,y+134,19,MUTED,max_width=512)
         card+=path(f'M{x+34} {y+160}H{x+554}',LINE,1.2)
-        rows=[e for e in grp.iter() if e.get('data-principle')]
+        rows=COPY['principles'][i*10:(i+1)*10]
         assert len(rows)==10
         for j,row in enumerate(rows):
-            txt=row.get('aria-label');ry=y+184+j*78
-            lines=[e.get('aria-label') for e in row.iter() if e is not row and e.get('aria-label') and not re.fullmatch(r'\d+',e.get('aria-label'))]
-            if not lines or max(text_width(line,23,'ko') for line in lines)>438:
-                lines=wrap(txt,23,438)
-            assert len(lines)<=2,(txt,lines)
+            txt=row['text'];ry=y+184+j*78
+            size=23;lines=wrap(txt,size,438)
+            if len(lines)>2:
+                size=20;lines=wrap(txt,size,438)
+            assert len(lines)<=3,(LANG,txt,lines)
             card+=f'<g data-principle="{j+1}" aria-label="{escape(txt,quote=True)}">'
             card+=rect(x+22,ry-4,544,70,accent,12,f'fill-opacity="{.055 if j%2==0 else .015}"')
             card+=rect(x+34,ry+3,34,28,f'url(#number-{i})',8)
             card+=s.text(f'{j+1:02}',x+42,ry+22,14,'#2d2944','mono')
-            for k,line in enumerate(lines):card+=s.text(line,x+86,ry+22+k*30,23,INK if k==len(lines)-1 else '#c4c8d5','ko')
+            line_height=23 if len(lines)>2 else 30
+            baseline=16 if len(lines)>2 else 22
+            for k,line in enumerate(lines):card+=s.text(line,x+86,ry+baseline+k*line_height,size,INK if k==len(lines)-1 else '#c4c8d5',max_width=438)
             card+=path(f'M{x+86} {ry+63}H{x+552}',LINE,.7,extra='opacity=".65"')+'</g>'
-        card+=s.text(footer,x+35,y+1006,19,accent,'ko')+circle(x+551,y+998,3,accent)
+        card+=s.text(footer,x+35,y+1006,19,accent,max_width=490)+circle(x+551,y+998,3,accent)
         s.add(card)
     s.write('principles-mobile.svg' if mobile else 'principles.svg')
 
 def toolkit(mobile=False):
     w,h=(640,188) if mobile else (1200,124)
-    s=SVG(w,h,'HTML · CSS · JavaScript — Browser first.','Browser-based tools, cross-platform, performance optimized, responsive by design.')
+    s=SVG(w,h,COPY['toolkit_alt'],'')
     background(s,SKY)
     s.add(s.text('BROWSER FIRST.',32 if mobile else 40,39 if mobile else 54,18,INK,'bold',.5))
     s.add(s.text('ONE WEB. MANY DEVICES.',32 if mobile else 40,64 if mobile else 80,10,MUTED,'mono',.6))
@@ -458,16 +488,86 @@ def toolkit(mobile=False):
 
 def footer(mobile=False):
     w,h=(640,208) if mobile else (1200,168)
-    s=SVG(w,h,'A little curiosity. A useful thing. — Yeony','Curiosity made useful. Yeony.')
+    s=SVG(w,h,COPY['footer_alt'],'')
     s.defs.append(f'<linearGradient id="paper" x2="1" y2=".5"><stop stop-color="{PINK}"/><stop offset=".5" stop-color="{SKY}"/><stop offset="1" stop-color="{GOLD}"/></linearGradient>')
     s.add(rect(0,0,w,h,'url(#paper)',24))
-    s.add(s.text('A little curiosity.',34 if mobile else 45,73 if mobile else 72,37,'#242a3a','bold',-1))
-    s.add(s.text('A useful thing.',34 if mobile else 45,124 if mobile else 123,37,'#242a3a','regular',-.5))
+    s.add(s.text('A little curiosity.',34 if mobile else 45,73 if mobile else 72,37,'#242a3a','bold',-1,max_width=510 if mobile else 900))
+    s.add(s.text('A useful thing.',34 if mobile else 45,124 if mobile else 123,37,'#242a3a','regular',-.5,max_width=560 if mobile else 900))
     s.add(s.text('YEONY',w-37 if mobile else w-98,h-27 if mobile else 96,12 if mobile else 17,'#424858','mono',1.3,anchor='end'))
     s.add(arrow(w-50,60 if mobile else 84,'#424858'))
     s.write('footer-mobile.svg' if mobile else 'footer.svg')
 
+PROJECTS = [
+    ('Illustracy','illustracy','Illustracy'),
+    ('Posity','posity','Scanner'),
+    ('Chordity','chordity','Chordity'),
+    ('Analog Soul','analog-soul','efx'),
+    ('Upscaly','upscaly','Upscaly'),
+    ('Film Filter Studio','film-filter-studio','Film_Sim'),
+]
+
+def language_buttons():
+    global OUT
+    previous=OUT
+    OUT=ROOT/'assets/aurora/languages'
+    OUT.mkdir(parents=True,exist_ok=True)
+    for active in (False,True):
+        s=SVG(192,60,COPY['name'],'')
+        s.defs.extend([
+          f'<linearGradient id="button-pearl" x2="1" y2="1"><stop stop-color="{PINK}"/><stop offset=".52" stop-color="{SKY}"/><stop offset="1" stop-color="{GOLD}"/></linearGradient>',
+          '<linearGradient id="button-glass" x2="1" y2="1"><stop stop-color="#433451"/><stop offset="1" stop-color="#202b45"/></linearGradient>'])
+        s.add(rect(1,2,190,56,'url(#button-pearl)' if active else 'url(#button-glass)',18,'stroke="url(#button-pearl)" stroke-width="1.5"'))
+        s.add(path('M21 5H170',INK,1,extra='opacity=".42"'))
+        ink='#292b44' if active else INK
+        s.add(circle(29,30,11,'none',f'stroke="{ink}" stroke-width="1.2"'))
+        s.add(f'<ellipse cx="29" cy="30" rx="4.5" ry="11" fill="none" stroke="{ink}" stroke-width="1.1"/>')
+        s.add(path('M18 30H40',ink,1.1))
+        s.add(s.text(COPY['name'],99,37,20,ink,'bold',anchor='middle',max_width=100))
+        s.add(path('M158 30H174M169 25L174 30L169 35',ink,1.6,extra='stroke-linecap="round" stroke-linejoin="round"'))
+        s.write(LANG+('-active' if active else '')+'.svg')
+    OUT=previous
+
+def picture(slug,alt,link=None):
+    base='assets/aurora/'+('' if LANG=='ko' else LANG+'/')
+    content=f'<picture><source media="(max-width: 640px)" srcset="{base}{slug}-mobile.svg?v=3" /><img src="{base}{slug}.svg?v=3" width="100%" alt="{escape(alt,quote=True)}" /></picture>'
+    if link:content=f'<a href="{link}">{content}</a>'
+    return '<p align="center">'+content+'</p>'
+
+def write_readme():
+    c=COPY
+    buttons=[]
+    for lang,locale in LOCALES.items():
+        href='https://github.com/Velvitty' if lang=='ko' else f'https://github.com/Velvitty/Velvitty/blob/main/README.{lang}.md'
+        asset=lang+('-active' if lang==LANG else '')
+        buttons.append(f'<a href="{href}"><img src="assets/aurora/languages/{asset}.svg?v=3" width="144" height="45" alt="{locale["name"]}" /></a>')
+    out=['<!-- Generated by tools/profile/build.py from tools/profile/locales/. -->',
+      '<p align="center">'+'\n'.join(buttons)+'</p>',
+      picture('hero',c['hero_alt']),
+      f'<h1 align="center">{c["headline"]}</h1>',
+      '<p align="center">'+c['hello']+'<br />\n'+c['intro']+'</p>',
+      '<p align="center"><strong>'+c['promise']+'</strong><br />\n'+c['pillars']+'</p>',
+      '<p align="center">'+ '　·　\n'.join(f'<a href="{href}">{label}</a>' for href,label in zip(['#user-content-projects','#user-content-approach','#user-content-principles','https://github.com/Velvitty?tab=repositories'],c['nav']))+'</p>',
+      picture('toolkit',c['toolkit_alt']),
+      '<a id="projects"></a>',
+      '## '+c['projects_title'],
+      c['projects_intro']+' **'+c['projects_hint']+'**']
+    for (canonical,slug,repo),name,desc in zip(PROJECTS,c['project_names'],c['project_descriptions']):
+        out.append(f'<!-- {canonical} -->\n'+picture(slug,name+': '+desc,'https://github.com/Velvitty/'+repo))
+    out.extend(['<details>\n<summary><strong>'+c['project_details']+'</strong></summary>',
+      '| '+' | '.join(c['table_headers'])+' |\n| --- | --- |\n'+'\n'.join('| ['+name+'](https://github.com/Velvitty/'+repo+') | '+desc+' |' for (_,slug,repo),name,desc in zip(PROJECTS,c['project_names'],c['project_descriptions'])),
+      c['limitations'],'</details>','<a id="approach"></a>','## '+c['approach_title']])
+    out.extend('**'+title+'** '+body for title,body in c['approach'])
+    out.extend(['<a id="principles"></a>','## '+c['principles_title'],'**'+c['principles_lead']+'**',c['principles_intro'],picture('principles',c['principles_alt'])])
+    for i,group in enumerate(c['principles_groups']):
+        out.extend(['<details>\n<summary><strong>'+group['title']+' · '+group['question']+'</strong></summary>',group['intro']])
+        for j,principle in enumerate(c['principles'][i*10:(i+1)*10]):
+            out.extend([f'#### {j+1:02}. '+principle['text'],'**'+c['reason_label']+'** — '+principle['reason'],'**'+c['choice_label']+'** — '+principle['choice']])
+        out.append('</details>')
+    out.extend(['**'+c['closing_lead']+'** '+c['closing'],'<br />',picture('footer',c['footer_alt'])])
+    (ROOT/('README.md' if LANG=='ko' else f'README.{LANG}.md')).write_text('\n\n'.join(out)+'\n')
+
 def main():
+    global LANG,COPY,OUT
     OUT.mkdir(parents=True,exist_ok=True)
     specs=[('Illustracy',1,'One image. New layers.','ILLUSTRATION / IMAGE TO PSD',illustracy,PINK),
       ('Posity',2,'Bring negatives to light.','FILM SCANS / COLOR / LIGHT',posity,GOLD),
@@ -475,10 +575,18 @@ def main():
       ('Analog Soul',4,'Give sound a little soul.','AUDIO / TONE / DYNAMICS / SPACE',analog,SKY),
       ('Upscaly',5,'More room for every detail.','IMAGE / RECONSTRUCTION / SCALE',upscaly,SKY),
       ('Film Filter Studio',6,'A little analog nostalgia.','COLOR / GRAIN / HALATION',film,PINK)]
-    for mobile in (False,True):
-        hero(mobile)
-        for spec in specs:project(*spec,mobile=mobile)
-        principles(mobile);toolkit(mobile);footer(mobile)
-    print('Built',len(list(OUT.glob('*.svg'))),'self-contained SVG assets.')
+    for LANG,COPY in LOCALES.items():
+        OUT=ROOT/'assets/aurora'/(LANG if LANG!='ko' else '')
+        OUT.mkdir(parents=True,exist_ok=True)
+        for mobile in (False,True):
+            hero(mobile)
+            for spec in specs:project(*spec,mobile=mobile)
+            principles(mobile);toolkit(mobile);footer(mobile)
+        language_buttons()
+        write_readme()
+    # Layout bounds are checked from the same glyph metrics used for rendering.
+    for lang,title,txt,x,y,width,size,w,h in TEXT_BOUNDS:
+        assert x>=-1 and x+width<=w+1,(lang,title,txt,x,width,w)
+    print('Built 80 localized artwork assets, 8 language buttons, and 4 READMEs.')
 
 if __name__=='__main__':main()

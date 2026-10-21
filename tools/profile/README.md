@@ -1,15 +1,43 @@
 # Profile artwork
 
-Rebuild all twenty desktop and mobile SVGs with Python 3:
+Rebuild the four localized READMEs, eighty desktop/mobile SVGs, and eight
+language buttons with Python 3:
 
 ```sh
 python tools/profile/build.py
 ```
 
-The build uses only the standard library. `latin-glyphs.json` contains outlined
-Noto Sans and DejaVu Sans Mono subsets; their notices are in `FONT-LICENSES.txt`.
-Korean outlines and the continuous Möbius geometry are reused from
-`assets/studio/`, so keep those source assets when rebuilding.
+The build uses only the standard library. `locales/ko.json`, `en.json`,
+`ja.json`, and `zh.json` are the text sources. Each includes all twenty
+principles and both explanatory paragraphs for each principle. Chinese uses
+simplified characters; the creator's supplied name character is **延**.
+Keep canonical repository names and destinations in `PROJECTS` even when
+display names are localized.
+
+`latin-glyphs.json` contains outlined Noto Sans and DejaVu Sans Mono subsets;
+their notices are in `FONT-LICENSES.txt`. `cjk-glyphs.json` provides regular
+and bold outlines from the regional Korean, Japanese, and Simplified Chinese
+Noto Sans CJK fonts. Their license is in `FONT-LICENSES-CJK.txt`.
+The continuous Möbius geometry is reused from `assets/studio/`.
+
+To regenerate CJK outlines after adding characters, install `fonttools`, obtain
+the Regular and Bold OTF files from the official
+[Noto CJK repository](https://github.com/notofonts/noto-cjk/tree/main/Sans/OTF)
+for `Korean/NotoSansCJKkr`, `Japanese/NotoSansCJKjp`, and
+`SimplifiedChinese/NotoSansCJKsc`, then run:
+
+```sh
+python tools/profile/subset_fonts.py /path/to/otfs
+python tools/profile/build.py
+```
+
+Korean artwork remains in `assets/aurora/`. Other languages use its `en/`,
+`ja/`, and `zh/` subdirectories. Language buttons use absolute GitHub links,
+so they work from both the profile and rendered repository Markdown pages.
+Every language uses the same artwork geometry, palette, CSS/SMIL motion,
+and desktop/mobile arrangement. Only text, text-fitting, and accessibility
+descriptions change. Technical identifiers such as HTML, CSS, JavaScript,
+PSD and musical chord symbols retain their standard spelling.
 
 The palette uses pearl pink `#ffc8e4`, sky `#b9e8ff`, and cream `#ffe5a8`
 highlights over indigo, violet, and blue light fields. The Möbius surface has
