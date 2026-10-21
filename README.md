@@ -1,5 +1,5 @@
 <p align="center">
-<picture><source media="(max-width: 640px)" srcset="assets/aurora/hero-mobile.svg" /><img src="assets/aurora/hero.svg" width="100%" alt="Yeony — 작은 아이디어를 쓸모 있는 가능성으로. 사진·음향·창작 도구를 만듭니다." /></picture>
+<picture><source media="(max-width: 640px)" srcset="assets/aurora/hero-mobile.svg?v=2" /><img src="assets/aurora/hero.svg?v=2" width="100%" alt="Yeony — 작은 아이디어를 쓸모 있는 가능성으로. 사진·음향·창작 도구를 만듭니다." /></picture>
 </p>
 
 <h1 align="center">쓸 것보다, 쓰임받을 것을.</h1>
@@ -21,7 +21,7 @@
   <a href="https://github.com/Velvitty?tab=repositories">모든 저장소 ↗</a>
 </p>
 
-<p align="center"><picture><source media="(max-width: 640px)" srcset="assets/aurora/toolkit-mobile.svg" /><img src="assets/aurora/toolkit.svg" width="100%" alt="주로 사용하는 기술은 HTML, CSS, JavaScript입니다. 브라우저에서 동작하는 도구를 만듭니다." /></picture></p>
+<p align="center"><picture><source media="(max-width: 640px)" srcset="assets/aurora/toolkit-mobile.svg?v=2" /><img src="assets/aurora/toolkit.svg?v=2" width="100%" alt="주로 사용하는 기술은 HTML, CSS, JavaScript입니다. 브라우저에서 동작하는 도구를 만듭니다." /></picture></p>
 
 <a id="projects"></a>
 
@@ -30,27 +30,27 @@
 사진의 색을 다시 찾고, 소리의 구조를 읽고, 창작의 다음 단계를 열어 주는 여섯 가지 도구입니다. **카드를 누르면 프로젝트로 이동합니다.**
 
 <p align="center">
-  <a href="https://github.com/Velvitty/Illustracy"><picture><source media="(max-width: 640px)" srcset="assets/aurora/illustracy-mobile.svg" /><img src="assets/aurora/illustracy.svg" width="100%" alt="Illustracy: 병합된 일러스트를 분석해 편집 가능한 레이어와 PSD로 재구성합니다. 러프와 가려진 배경은 추정해 보완합니다." /></picture></a>
+  <a href="https://github.com/Velvitty/Illustracy"><picture><source media="(max-width: 640px)" srcset="assets/aurora/illustracy-mobile.svg?v=2" /><img src="assets/aurora/illustracy.svg?v=2" width="100%" alt="Illustracy: 병합된 일러스트를 분석해 편집 가능한 레이어와 PSD로 재구성합니다. 러프와 가려진 배경은 추정해 보완합니다." /></picture></a>
 </p>
 
 <p align="center">
-  <a href="https://github.com/Velvitty/Scanner"><picture><source media="(max-width: 640px)" srcset="assets/aurora/posity-mobile.svg" /><img src="assets/aurora/posity.svg" width="100%" alt="Posity: 컬러 네거티브 스캔을 사진으로 변환하고, 밝기·색 균형을 조절하며 여러 장을 한꺼번에 내보냅니다." /></picture></a>
+  <a href="https://github.com/Velvitty/Scanner"><picture><source media="(max-width: 640px)" srcset="assets/aurora/posity-mobile.svg?v=2" /><img src="assets/aurora/posity.svg?v=2" width="100%" alt="Posity: 컬러 네거티브 스캔을 사진으로 변환하고, 밝기·색 균형을 조절하며 여러 장을 한꺼번에 내보냅니다." /></picture></a>
 </p>
 
 <p align="center">
-  <a href="https://github.com/Velvitty/Chordity"><picture><source media="(max-width: 640px)" srcset="assets/aurora/chordity-mobile.svg" /><img src="assets/aurora/chordity.svg" width="100%" alt="Chordity: 음원의 마디별 코드와 박을 추정하고, 박에 맞춘 메트로놈과 합성 피아노로 확인합니다." /></picture></a>
+  <a href="https://github.com/Velvitty/Chordity"><picture><source media="(max-width: 640px)" srcset="assets/aurora/chordity-mobile.svg?v=2" /><img src="assets/aurora/chordity.svg?v=2" width="100%" alt="Chordity: 음원의 마디별 코드와 박을 추정하고, 박에 맞춘 메트로놈과 합성 피아노로 확인합니다." /></picture></a>
 </p>
 
 <p align="center">
-  <a href="https://github.com/Velvitty/efx"><picture><source media="(max-width: 640px)" srcset="assets/aurora/analog-soul-mobile.svg" /><img src="assets/aurora/analog-soul.svg" width="100%" alt="Analog Soul: 아날로그 음색·다이내믹스·공간 효과와 고역 보완을 조절하고 WAV로 내보냅니다." /></picture></a>
+  <a href="https://github.com/Velvitty/efx"><picture><source media="(max-width: 640px)" srcset="assets/aurora/analog-soul-mobile.svg?v=2" /><img src="assets/aurora/analog-soul.svg?v=2" width="100%" alt="Analog Soul: 아날로그 음색·다이내믹스·공간 효과와 고역 보완을 조절하고 WAV로 내보냅니다." /></picture></a>
 </p>
 
 <p align="center">
-  <a href="https://github.com/Velvitty/Upscaly"><picture><source media="(max-width: 640px)" srcset="assets/aurora/upscaly-mobile.svg" /><img src="assets/aurora/upscaly.svg" width="100%" alt="Upscaly: 이미지의 종류와 상태를 분석해 확대하고, 선형광 보간·윤곽 보정·16비트 PNG 저장을 지원합니다." /></picture></a>
+  <a href="https://github.com/Velvitty/Upscaly"><picture><source media="(max-width: 640px)" srcset="assets/aurora/upscaly-mobile.svg?v=2" /><img src="assets/aurora/upscaly.svg?v=2" width="100%" alt="Upscaly: 이미지의 종류와 상태를 분석해 확대하고, 선형광 보간·윤곽 보정·16비트 PNG 저장을 지원합니다." /></picture></a>
 </p>
 
 <p align="center">
-  <a href="https://github.com/Velvitty/Film_Sim"><picture><source media="(max-width: 640px)" srcset="assets/aurora/film-filter-studio-mobile.svg" /><img src="assets/aurora/film-filter-studio.svg" width="100%" alt="Film Filter Studio: 필름 색감·그레인·할레이션과 빈티지 렌즈 효과를 적용합니다." /></picture></a>
+  <a href="https://github.com/Velvitty/Film_Sim"><picture><source media="(max-width: 640px)" srcset="assets/aurora/film-filter-studio-mobile.svg?v=2" /><img src="assets/aurora/film-filter-studio.svg?v=2" width="100%" alt="Film Filter Studio: 필름 색감·그레인·할레이션과 빈티지 렌즈 효과를 적용합니다." /></picture></a>
 </p>
 
 <details>
@@ -91,7 +91,7 @@
 
 <!-- principles-glass-start -->
 <p align="center">
-  <picture><source media="(max-width: 640px)" srcset="assets/aurora/principles-mobile.svg" /><img src="assets/aurora/principles.svg" width="100%" alt="이용자 가치 지향 10계명과 연이 개발 지향 10계명. 각 카드에 원칙 1번부터 10번까지 담았습니다. 전체 원문과 각 원칙의 이유는 아래에서 펼쳐 읽을 수 있습니다." /></picture>
+  <picture><source media="(max-width: 640px)" srcset="assets/aurora/principles-mobile.svg?v=2" /><img src="assets/aurora/principles.svg?v=2" width="100%" alt="이용자 가치 지향 10계명과 연이 개발 지향 10계명. 각 카드에 원칙 1번부터 10번까지 담았습니다. 전체 원문과 각 원칙의 이유는 아래에서 펼쳐 읽을 수 있습니다." /></picture>
 </p>
 <!-- principles-glass-end -->
 
@@ -235,4 +235,4 @@
 
 <br />
 
-<p align="center"><picture><source media="(max-width: 640px)" srcset="assets/aurora/footer-mobile.svg" /><img src="assets/aurora/footer.svg" width="100%" alt="작은 호기심에서, 쓸모 있는 도구로. — Yeony" /></picture></p>
+<p align="center"><picture><source media="(max-width: 640px)" srcset="assets/aurora/footer-mobile.svg?v=2" /><img src="assets/aurora/footer.svg?v=2" width="100%" alt="작은 호기심에서, 쓸모 있는 도구로. — Yeony" /></picture></p>
