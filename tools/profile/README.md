@@ -1,6 +1,6 @@
 # Profile artwork
 
-Rebuild the six localized READMEs, 120 desktop/mobile SVGs, and twelve
+Rebuild the six localized READMEs, 120 desktop/mobile SVGs, and twenty-four
 language buttons with Python 3:
 
 ```sh
@@ -47,8 +47,12 @@ licenses remain in `FONT-LICENSES.txt`.
 Korean artwork remains in `assets/aurora/`. Other languages use its `en/`,
 `ja/`, `zh/`, `fr/`, and `es/` subdirectories. Language buttons use absolute GitHub links,
 so they work from both the profile and rendered repository Markdown pages.
-The six compact buttons fit the main desktop profile width and wrap naturally
-on narrower screens.
+Each of the six language buttons uses 16% of the available width. The links
+have no intervening whitespace and no fixed image height, so the complete
+96%-wide row stays on one line as the profile narrows. At viewports up to
+640 px, `<picture>` selects taller buttons with larger labels and no icons
+or arrows. Keep the native language names, links, and active state in both
+button variants.
 Every language uses the same artwork geometry, palette, CSS/SMIL motion,
 and desktop/mobile arrangement. Only text, text-fitting, and accessibility
 descriptions change. Technical identifiers such as HTML, CSS, JavaScript,
