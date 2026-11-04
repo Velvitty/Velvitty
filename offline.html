@@ -4,11 +4,16 @@
 @media(max-width:540px){body{padding:20px}.glass{padding:28px 23px}.brand{margin-bottom:25px}.symbol{width:64px;height:64px;margin-bottom:23px}.secondary{font-size:14px;margin-top:17px;margin-bottom:25px}}
 
 .glass{--lens-ink:#fff;--lens-muted:#ededed}.glass[data-surface="light"]{--lens-ink:#171717;--lens-muted:#444}.glass :is(.brand,.primary,.symbol){color:var(--lens-ink)}.glass :is(.secondary,.retry-note){color:var(--lens-muted)}.glass[data-surface="light"] :is(.brand,.primary,.secondary,.retry-note){text-shadow:none}
-</style></head><body><iframe class="app-backdrop" src="./pwa-ui.html" title="" sandbox="allow-same-origin" tabindex="-1" inert aria-hidden="true"></iframe><button class="retry-surface" type="button" onclick="location.reload()" aria-label="연결을 다시 시도하려면 화면을 아무 곳이나 누르세요."></button><div class="scene" aria-hidden="true"></div><main class="glass" role="alert" aria-live="assertive" aria-labelledby="connection-message" aria-describedby="connection-guide"><h1 class="brand">Velvitty</h1><div class="symbol"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11a20 20 0 0 1 5-3m6-1a20 20 0 0 1 13 4M8 16a13 13 0 0 1 5-2m6 0a13 13 0 0 1 5 2M12 21a7 7 0 0 1 8 0M16 26h.01M4 4l24 24"/></svg></div><p class="primary" id="connection-message">인터넷 연결 상태가 불안정하여 어플리케이션을 실행할 수 없습니다.</p><p class="secondary" id="connection-guide">네트워크 환경을 확인해 주세요.</p><p class="retry-note">연결을 다시 시도하려면 화면을 아무 곳이나 누르세요.</p></main><script>function installGlassLens(root) {
+</style></head><body><iframe class="app-backdrop" title="" sandbox="allow-same-origin" tabindex="-1" inert aria-hidden="true"></iframe><button class="retry-surface" type="button" onclick="location.reload()" aria-label="연결을 다시 시도하려면 화면을 아무 곳이나 누르세요."></button><div class="scene" aria-hidden="true"></div><main class="glass" role="alert" aria-live="assertive" aria-labelledby="connection-message" aria-describedby="connection-guide"><h1 class="brand">Velvitty</h1><div class="symbol"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11a20 20 0 0 1 5-3m6-1a20 20 0 0 1 13 4M8 16a13 13 0 0 1 5-2m6 0a13 13 0 0 1 5 2M12 21a7 7 0 0 1 8 0M16 26h.01M4 4l24 24"/></svg></div><p class="primary" id="connection-message">인터넷 연결 상태가 불안정하여 어플리케이션을 실행할 수 없습니다.</p><p class="secondary" id="connection-guide">네트워크 환경을 확인해 주세요.</p><p class="retry-note">연결을 다시 시도하려면 화면을 아무 곳이나 누르세요.</p></main><script>function installGlassLens(root) {
   const doc = root.ownerDocument || root;
   const glass = root.querySelector('.glass');
   const backdrop = root.querySelector('.app-backdrop');
   if (!glass || !backdrop || glass.querySelector('.lens-optics')) return;
+  // Sandboxed background frames cannot rely on service-worker navigation.
+  // Read only this application's saved UI and embed it without a network request.
+  backdrop.removeAttribute('src');
+  const uiScope = new URL('./', location.href).href;
+  readStaticUIFromCache(uiScope).then(html => { if (html) backdrop.srcdoc = html; }).catch(() => {});
   const optics = doc.createElement('div');
   optics.className = 'lens-optics';
   optics.setAttribute('aria-hidden', 'true');
@@ -134,7 +139,7 @@
   function copyStaticUI() {
     try {
       const page = backdrop.contentDocument;
-      if (!page?.documentElement) return;
+      if (!page?.documentElement || page.URL === 'about:blank') return;
       const style = page.defaultView.getComputedStyle(page.body);
       let background = style.backgroundColor;
       let values = background.match(/[\d.]+/g)?.map(Number);
@@ -169,6 +174,21 @@
   addEventListener('scroll', schedule, {passive: true, capture: true});
   root.host?.addEventListener('scroll', schedule, {passive: true});
   schedule();
+}
+
+async function readStaticUIFromCache(scopeURL) {
+  if (typeof caches === 'undefined') return '';
+  const marker = ':' + encodeURIComponent(scopeURL) + ':';
+  const uiURL = new URL('./pwa-ui.html', scopeURL).href;
+  const names = (await caches.keys()).filter(name => name.startsWith('velvitty-pwa:') && name.includes(marker) && name.endsWith(':shell')).reverse();
+  for (const cacheName of names) {
+    const response = await caches.match(uiURL, {cacheName});
+    if (response?.ok) {
+      const html = await response.text();
+      if (html.trim()) return html;
+    }
+  }
+  return '';
 }
 
 installGlassLens(document);</script></body></html>
