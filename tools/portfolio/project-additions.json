@@ -1,0 +1,66 @@
+{
+  "sources": [
+    { "repository": "Velvitty/MacGuard", "path": "README.md", "blob_sha": "90ba5389e080cc60a8ed66160d38dc33773ea635", "read_at": "2026-10-25" },
+    { "repository": "Velvitty/Photo_Scorer", "path": "README.md", "blob_sha": "4d2ce866109fd36dc4407c13f9f93b84ba7fe4d5", "read_at": "2026-10-25" }
+  ],
+  "projects": [
+    { "id": "macguard", "name": "MacGuard", "repo": "MacGuard", "type": "security", "banner": "A watchful browser." },
+    { "id": "photo-scorer", "name": "Photo Scorer", "repo": "Photo_Scorer", "type": "image", "banner": "A fresh perspective on every photo." }
+  ],
+  "locales": {
+    "ko": {
+      "project_names": ["맥가드", "포토 스코어러"],
+      "project_descriptions": ["웹 페이지 안에서 6자리 PIN 잠금과 입력·탭·네트워크 변화 감지, 경보와 이벤트 기록을 구성합니다.", "브라우저에서 사진의 구도·노출·색감 등 7개 항목을 픽셀과 규칙으로 평가하고, 종합 점수와 개선 팁을 보여 줍니다."],
+      "categories": ["보안 · 이벤트 감지", "사진 · 평가"],
+      "projects_intro": "사진의 색을 다시 찾고, 소리의 구조를 읽고, 일상의 작은 필요를 채우는 여덟 가지 도구입니다.",
+      "nav": "여덟 가지 프로젝트 ↘",
+      "art": {"A watchful browser.": "브라우저 안의 작은 파수꾼.", "A fresh perspective on every photo.": "사진을 보는 새로운 시선."},
+      "ui": {"discover": "여덟 가지 도구 만나기", "all": "전체 08", "security": "보안", "guardTest": "이벤트 체험", "guardReset": "다시 준비", "guardReady": "브라우저 잠금", "guardAlert": "입력 감지", "guardLogReady": "감지 대기 중", "guardLogAlert": "이벤트 기록됨", "photoShow": "가이드 켜기", "photoHide": "가이드 끄기", "photoCriteria": "평가 항목", "photoMetricNames": ["구도", "노출", "피사체", "심도", "색감", "선명도", "창의성"]}
+    },
+    "en": {
+      "project_names": ["MacGuard", "Photo Scorer"],
+      "project_descriptions": ["A browser-page PIN lock with input, tab and network change detection, alerts, and an event log.", "Evaluates seven aspects of a photo using pixel measurements and rules in your browser, with an overall score and practical tips."],
+      "categories": ["Security · Monitoring", "Photo · Evaluation"],
+      "projects_intro": "Eight tools for rediscovering photographic color, understanding sound, and answering small everyday needs.",
+      "nav": "Eight projects ↘",
+      "art": {"A watchful browser.": "A watchful browser.", "A fresh perspective on every photo.": "A fresh perspective on every photo."},
+      "ui": {"discover": "Explore the eight tools", "all": "All 08", "security": "Security", "guardTest": "Try an event", "guardReset": "Reset demo", "guardReady": "Browser lock", "guardAlert": "Input detected", "guardLogReady": "Waiting for an event", "guardLogAlert": "Event recorded", "photoShow": "Show guides", "photoHide": "Hide guides", "photoCriteria": "Criteria", "photoMetricNames": ["Composition", "Exposure", "Subject", "Depth", "Color", "Sharpness", "Creativity"]}
+    },
+    "ja": {
+      "project_names": ["マックガード", "フォトスコアラー"],
+      "project_descriptions": ["Webページ内の6桁PINロック。入力・タブ・ネットワークの変化を検知し、警報とイベント記録を表示します。", "ブラウザ上で写真の構図・露出・色彩など7項目を画素とルールで評価し、総合点と改善のヒントを示します。"],
+      "categories": ["セキュリティ · 検知", "写真 · 評価"],
+      "projects_intro": "写真の色を取り戻し、音の構造を読み解き、日々の小さな必要に応える8つのツールです。",
+      "nav": "8つのプロジェクト ↘",
+      "art": {"A watchful browser.": "ブラウザの小さな見守り役。", "A fresh perspective on every photo.": "写真に、新しい視点を。"},
+      "ui": {"discover": "8つのツールを見る", "all": "すべて 08", "security": "セキュリティ", "guardTest": "イベント体験", "guardReset": "リセット", "guardReady": "ブラウザロック", "guardAlert": "入力を検知", "guardLogReady": "検知待機中", "guardLogAlert": "イベントを記録", "photoShow": "ガイド表示", "photoHide": "ガイド非表示", "photoCriteria": "評価項目", "photoMetricNames": ["構図", "露出", "被写体", "深度", "色彩", "鮮明さ", "創造性"]}
+    },
+    "zh": {
+      "project_names": ["Mac 守护", "照片评分器"],
+      "project_descriptions": ["在网页内提供六位PIN锁屏，检测输入、标签页和网络状态变化，并显示警报与事件记录。", "在浏览器内依据像素测量与规则，评估照片构图、曝光、色彩等七个方面，提供综合评分与改进建议。"],
+      "categories": ["安全 · 事件检测", "摄影 · 评估"],
+      "projects_intro": "八款工具，重新发现照片色彩，读懂声音结构，也回应日常的小小需求。",
+      "nav": "八个项目 ↘",
+      "art": {"A watchful browser.": "浏览器里的小小守望者。", "A fresh perspective on every photo.": "换个视角，看见照片的可能。"},
+      "ui": {"discover": "探索八款工具", "all": "全部 08", "security": "安全", "guardTest": "体验事件", "guardReset": "重置演示", "guardReady": "浏览器锁屏", "guardAlert": "检测到输入", "guardLogReady": "等待事件", "guardLogAlert": "事件已记录", "photoShow": "显示辅助线", "photoHide": "隐藏辅助线", "photoCriteria": "评估维度", "photoMetricNames": ["构图", "曝光", "主体", "景深", "色彩", "清晰度", "创意"]}
+    },
+    "fr": {
+      "project_names": ["MacGuard", "Évaluateur photo"],
+      "project_descriptions": ["Un verrouillage par code PIN dans la page web, avec détection des entrées et des changements d’onglet ou de réseau, alertes et journal d’événements.", "Évalue sept aspects d’une photo à partir de mesures des pixels et de règles dans le navigateur, avec une note globale et des conseils pratiques."],
+      "categories": ["Sécurité · Détection", "Photo · Évaluation"],
+      "projects_intro": "Huit outils pour retrouver les couleurs des photos, comprendre le son et répondre aux petits besoins du quotidien.",
+      "nav": "Huit projets ↘",
+      "art": {"A watchful browser.": "Un navigateur qui veille.", "A fresh perspective on every photo.": "Un regard neuf sur chaque photo."},
+      "ui": {"discover": "Explorer les huit outils", "all": "Tous 08", "security": "Sécurité", "guardTest": "Simuler un événement", "guardReset": "Réinitialiser", "guardReady": "Page verrouillée", "guardAlert": "Entrée détectée", "guardLogReady": "En attente d’un événement", "guardLogAlert": "Événement enregistré", "photoShow": "Afficher les guides", "photoHide": "Masquer les guides", "photoCriteria": "Critères", "photoMetricNames": ["Composition", "Exposition", "Sujet", "Profondeur", "Couleur", "Netteté", "Créativité"]}
+    },
+    "es": {
+      "project_names": ["MacGuard", "Evaluador de fotos"],
+      "project_descriptions": ["Un bloqueo con PIN dentro de la página web, con detección de entradas y cambios de pestaña o red, alertas y registro de eventos.", "Evalúa siete aspectos de una foto mediante mediciones de píxeles y reglas en el navegador, con una puntuación global y consejos prácticos."],
+      "categories": ["Seguridad · Detección", "Foto · Evaluación"],
+      "projects_intro": "Ocho herramientas para redescubrir el color de las fotos, comprender el sonido y responder a pequeñas necesidades cotidianas.",
+      "nav": "Ocho proyectos ↘",
+      "art": {"A watchful browser.": "Un navegador que vigila.", "A fresh perspective on every photo.": "Una nueva mirada a cada foto."},
+      "ui": {"discover": "Explorar las ocho herramientas", "all": "Todos 08", "security": "Seguridad", "guardTest": "Simular un evento", "guardReset": "Reiniciar", "guardReady": "Página bloqueada", "guardAlert": "Entrada detectada", "guardLogReady": "Esperando un evento", "guardLogAlert": "Evento registrado", "photoShow": "Mostrar guías", "photoHide": "Ocultar guías", "photoCriteria": "Criterios", "photoMetricNames": ["Composición", "Exposición", "Sujeto", "Profundidad", "Color", "Nitidez", "Creatividad"]}
+    }
+  }
+}

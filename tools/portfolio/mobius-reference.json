@@ -1,0 +1,13 @@
+{
+  "repository": "Velvitty/Velvitty",
+  "commit": "2e5c78e60427fcea5a40338ad82feea19922b562",
+  "path": "assets/aurora/hero.svg",
+  "blob": "c9a032cebfb55876a9d27cd7f89b87ba0457cd10",
+  "face_count": 720,
+  "geometry_sha256": "75855d42b47e706e015cd38ee41b58d98d8e20ff308d03ae9a996f9d36ea93dd",
+  "asset_sha256": "8723d47dde695523f8a60e7411c8e07d9983fb48f7185dbf80f8bdc9bd8df137",
+  "material_values": "0 0;1200 0",
+  "material_duration": "5.6s",
+  "controller_period": 252,
+  "preserved": "Projected geometry, UV affine mappings, depth order, silhouette mask, lighting, pearl material and source motion; hero-orbit wrapper omitted to keep the strip fixed."
+}

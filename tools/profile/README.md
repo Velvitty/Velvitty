@@ -1,3 +1,17 @@
+# Current profile: photographic white aurora
+
+Run `python3 tools/profile/portfolio.py` from the repository root to regenerate
+the current six READMEs and responsive animated SVGs. The historical
+`python3 tools/profile/build.py` command also builds this edition.
+See [the portfolio source documentation](../portfolio/README.md).
+
+The GitHub profile uses SVG previews linked to the full interactive website at
+<https://yeon.at/portfolio/>. The existing root website and PWA are preserved.
+Use `python3 tools/profile/build.py --legacy` only to reproduce the previous
+artwork and READMEs. The original documentation below describes that edition.
+
+---
+
 # Profile artwork
 
 Rebuild the six localized READMEs, 120 desktop/mobile SVGs, and twenty-four
@@ -92,3 +106,4 @@ When changing this artwork, check both image variants, the full README in
 light and dark themes, image links, SVG IDs and references, and all twenty
 principles against the source text. Keep headings and descriptions outside
 the images as Markdown where they need to be searchable or expandable.
+

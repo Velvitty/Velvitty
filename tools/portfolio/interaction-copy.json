@@ -1,0 +1,182 @@
+{
+  "ko": {
+    "tryIt": "직접 체험",
+    "tryTitle": "눌러 보고, 움직여 보세요.",
+    "tryHelp": "카드를 눌러 보고, 사진 속 세로줄을 잡아 좌우로 움직여 보세요.",
+    "dragRange": "좌우로 밀어 보세요",
+    "before": "원본",
+    "after": "확대",
+    "demoInstructions": [
+      "카드를 눌러 보세요.",
+      "사진 속 세로줄을 잡고 좌우로 움직여 네거티브와 포지티브를 비교하세요.",
+      "카드를 눌러 보세요.",
+      "슬라이더를 움직여 음색과 공간감의 시각화를 바꿔 보세요.",
+      "사진 속 세로줄을 잡고 좌우로 움직여 확대 전후의 디테일을 비교하세요.",
+      "카드를 눌러 보세요.",
+      "카드를 눌러 보세요.",
+      "카드를 눌러 보세요."
+    ],
+    "layerStates": [
+      "레이어 모음",
+      "레이어 펼침"
+    ],
+    "audioStates": [
+      "재생 꺼짐",
+      "코드 재생 중"
+    ],
+    "photoStates": [
+      "가이드 꺼짐",
+      "가이드 켜짐"
+    ]
+  },
+  "en": {
+    "tryIt": "Try it",
+    "tryTitle": "Press a button. Move a slider.",
+    "tryHelp": "Tap a card, or grab the vertical line inside a photo and drag it left or right.",
+    "dragRange": "Drag left or right",
+    "before": "Original",
+    "after": "Enlarged",
+    "demoInstructions": [
+      "Tap the card.",
+      "Grab the vertical line inside the photo and drag it to compare negative and positive color.",
+      "Tap the card.",
+      "Move the sliders to change the tone and space visualization.",
+      "Grab the vertical line inside the photo and drag it to compare detail before and after enlargement.",
+      "Tap the card.",
+      "Tap the card.",
+      "Tap the card."
+    ],
+    "layerStates": [
+      "Layers merged",
+      "Layers unfolded"
+    ],
+    "audioStates": [
+      "Playback off",
+      "Playing chords"
+    ],
+    "photoStates": [
+      "Guides off",
+      "Guides on"
+    ]
+  },
+  "ja": {
+    "tryIt": "触って体験",
+    "tryTitle": "押して、動かして、試してみてください。",
+    "tryHelp": "カードを押したり、写真の中の縦線をつかんで左右に動かしてみてください。",
+    "dragRange": "左右に動かしてください",
+    "before": "元の画像",
+    "after": "拡大後",
+    "demoInstructions": [
+      "カードを押してみてください。",
+      "写真の中の縦線をつかんで左右に動かし、ネガとポジを比較してください。",
+      "カードを押してみてください。",
+      "スライダーを動かして音色と空間の可視化を変えてみてください。",
+      "写真の中の縦線をつかんで左右に動かし、拡大前後の細部を比較してください。",
+      "カードを押してみてください。",
+      "カードを押してみてください。",
+      "カードを押してみてください。"
+    ],
+    "layerStates": [
+      "レイヤーを重ねた状態",
+      "レイヤーを開いた状態"
+    ],
+    "audioStates": [
+      "再生オフ",
+      "コードを再生中"
+    ],
+    "photoStates": [
+      "ガイド非表示",
+      "ガイド表示"
+    ]
+  },
+  "zh": {
+    "tryIt": "动手体验",
+    "tryTitle": "点一点，拖一拖，亲自试试。",
+    "tryHelp": "点击卡片，或抓住照片中的竖线左右拖动。",
+    "dragRange": "左右拖动试试",
+    "before": "原图",
+    "after": "放大后",
+    "demoInstructions": [
+      "点击卡片试试。",
+      "抓住照片中的竖线左右拖动，对比负片与正片的色彩。",
+      "点击卡片试试。",
+      "拖动滑块，改变音色与空间感的可视化效果。",
+      "抓住照片中的竖线左右拖动，对比放大前后的细节。",
+      "点击卡片试试。",
+      "点击卡片试试。",
+      "点击卡片试试。"
+    ],
+    "layerStates": [
+      "图层已合并",
+      "图层已展开"
+    ],
+    "audioStates": [
+      "播放已关闭",
+      "正在播放和弦"
+    ],
+    "photoStates": [
+      "辅助线已隐藏",
+      "辅助线已显示"
+    ]
+  },
+  "fr": {
+    "tryIt": "À vous d’essayer",
+    "tryTitle": "Appuyez. Faites glisser. Essayez.",
+    "tryHelp": "Appuyez sur une carte ou saisissez la ligne verticale dans une photo et déplacez-la.",
+    "dragRange": "Glissez à gauche ou à droite",
+    "before": "Original",
+    "after": "Agrandissement",
+    "demoInstructions": [
+      "Appuyez sur la carte.",
+      "Saisissez la ligne verticale dans la photo et déplacez-la pour comparer le négatif et le positif.",
+      "Appuyez sur la carte.",
+      "Déplacez les curseurs pour modifier la visualisation du timbre et de l’espace.",
+      "Saisissez la ligne verticale dans la photo et déplacez-la pour comparer les détails avant et après agrandissement.",
+      "Appuyez sur la carte.",
+      "Appuyez sur la carte.",
+      "Appuyez sur la carte."
+    ],
+    "layerStates": [
+      "Calques réunis",
+      "Calques déployés"
+    ],
+    "audioStates": [
+      "Lecture arrêtée",
+      "Lecture des accords"
+    ],
+    "photoStates": [
+      "Guides masqués",
+      "Guides affichés"
+    ]
+  },
+  "es": {
+    "tryIt": "Pruébalo",
+    "tryTitle": "Pulsa. Desliza. Pruébalo.",
+    "tryHelp": "Pulsa una tarjeta o arrastra a izquierda o derecha la línea vertical de una foto.",
+    "dragRange": "Desliza a izquierda o derecha",
+    "before": "Original",
+    "after": "Ampliada",
+    "demoInstructions": [
+      "Pulsa la tarjeta.",
+      "Arrastra la línea vertical de la foto para comparar el negativo y el positivo.",
+      "Pulsa la tarjeta.",
+      "Mueve los controles para cambiar la visualización del timbre y el espacio.",
+      "Arrastra la línea vertical de la foto para comparar los detalles antes y después de ampliar.",
+      "Pulsa la tarjeta.",
+      "Pulsa la tarjeta.",
+      "Pulsa la tarjeta."
+    ],
+    "layerStates": [
+      "Capas reunidas",
+      "Capas desplegadas"
+    ],
+    "audioStates": [
+      "Reproducción apagada",
+      "Reproduciendo acordes"
+    ],
+    "photoStates": [
+      "Guías ocultas",
+      "Guías visibles"
+    ]
+  }
+}

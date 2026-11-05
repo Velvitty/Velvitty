@@ -1,0 +1,314 @@
+{
+  "ko": {
+    "source": {
+      "intro": "사진에 깊이를. 소리에 온기를. 창작에 가능성을.",
+      "promise": "작은 터치. 깊은 변화.",
+      "projects_title": "쓸수록, 선명해지는 가능성.",
+      "projects_intro": "여덟 개의 도구. 저마다 다른 감각.",
+      "approach_title": "복잡함을 덜어, 가능성을 더하다.",
+      "principles_lead": "필요를 발견하고. 근거로 만들고. 누구나 쓰도록.",
+      "closing_lead": "작은 도구. 오래 남는 변화.",
+      "project_descriptions": [
+        "한 장의 일러스트를 편집 가능한 레이어와 PSD로. 가려진 부분은 추정해 보완합니다.",
+        "네거티브를 사진으로. 밝기·색 균형부터 일괄 출력까지.",
+        "음원의 코드와 박을 추정하고, 합성 피아노로 확인하세요.",
+        "음색·다이내믹스·공간감. 나만의 소리를 만들고 WAV로.",
+        "이미지에 맞춘 확대와 노이즈 억제. 16비트 PNG까지.",
+        "필름 색감, 그레인, 빛 번짐. 사진에 다른 분위기를.",
+        "브라우저 페이지를 PIN으로 잠그고, 변화를 감지·기록합니다.",
+        "사진을 읽는 7가지 기준. 픽셀과 규칙으로 평가하고 개선점을 짚습니다."
+      ]
+    },
+    "art": {
+      "One image. New layers.": "한 장 너머의 가능성.",
+      "Bring negatives to light.": "기억을, 다시 빛으로.",
+      "Find the harmony.": "소리 속 화음을 보다.",
+      "Give sound a little soul.": "소리에, 체온을.",
+      "More room for every detail.": "작은 디테일. 큰 차이.",
+      "A little analog nostalgia.": "오늘에, 어제의 색.",
+      "A watchful browser.": "당신의 자리를 지키다.",
+      "A fresh perspective on every photo.": "좋은 사진엔, 이유가 있다.",
+      "Small ideas.": "생각을,",
+      "Useful possibilities.": "감각으로."
+    },
+    "ui": {
+      "discover": "직접 느껴 보세요",
+      "selected": "01 / 여덟 가지 가능성",
+      "built": "02 / 만드는 이유",
+      "tryTitle": "보는 순간에서, 만지는 순간으로.",
+      "tryHelp": "카드를 누르고. 사진의 세로줄을 움직이고. 감각을 바꿔 보세요.",
+      "concept": "직접 조작하는 콘셉트 데모입니다. 생성한 예시 이미지와 시각 효과는 실제 도구의 처리 결과가 아닙니다.",
+      "galleryKicker": "눈으로 보고. 손끝으로 바꾸고.",
+      "galleryTitle": "감각이 움직이는 순간.",
+      "galleryHint": "이미지를 눌러 체험으로 이동",
+      "statProjects": "개의 도구",
+      "statLanguages": "개의 언어",
+      "statBrowser": "하나의 웹",
+      "photoAltCoast": "분홍빛 구름과 푸른 바다, 석회암 해안의 생성 예시 이미지",
+      "photoAltBotanical": "이슬 맺힌 분홍 코스모스와 흰 꽃의 생성 예시 이미지",
+      "gallery0": "빛을, 다시.",
+      "gallery1": "디테일을, 더 깊이.",
+      "gallery2": "소리를, 만지다."
+    }
+  },
+  "en": {
+    "source": {
+      "intro": "Depth in images. Warmth in sound. Room to create.",
+      "promise": "Small touch. Lasting change.",
+      "projects_title": "Possibility. Put to work.",
+      "projects_intro": "Eight tools. Eight ways to feel more.",
+      "approach_title": "Less friction. More possibility.",
+      "principles_lead": "Find the need. Build on evidence. Open it to everyone.",
+      "closing_lead": "Small tools. Lasting change.",
+      "project_descriptions": [
+        "Turn a flat illustration into editable layers and PSD. Hidden areas are estimated.",
+        "Negatives into photographs. Balance light and color, then export in batches.",
+        "Estimate chords and beats. Hear them back on a synthesized piano.",
+        "Tone, dynamics, space. Shape your sound and export WAV.",
+        "Image-aware enlargement and noise reduction. Export up to 16-bit PNG.",
+        "Film color, grain and halation. Give your images another atmosphere.",
+        "PIN-lock a browser page. Detect changes and keep an event log.",
+        "Seven ways to read a photo. Pixel- and rule-based scores with improvement tips."
+      ]
+    },
+    "art": {
+      "One image. New layers.": "Beyond the flat image.",
+      "Bring negatives to light.": "Bring memory to light.",
+      "Find the harmony.": "See the harmony.",
+      "Give sound a little soul.": "Give sound a pulse.",
+      "More room for every detail.": "Small details. Big difference.",
+      "A little analog nostalgia.": "Today, in yesterday’s color.",
+      "A watchful browser.": "Keep watch over your space.",
+      "A fresh perspective on every photo.": "A good photo has its reasons.",
+      "Small ideas.": "Ideas.",
+      "Useful possibilities.": "In motion."
+    },
+    "ui": {
+      "discover": "Feel it for yourself",
+      "selected": "01 / EIGHT POSSIBILITIES",
+      "built": "02 / THE REASON TO BUILD",
+      "tryTitle": "From looking to feeling.",
+      "tryHelp": "Tap a card. Drag the line in a photo. Change the feeling.",
+      "concept": "Interactive concept studies. Generated sample images and visual effects do not represent the tools’ actual processing results.",
+      "galleryKicker": "SEE IT. TOUCH IT. CHANGE IT.",
+      "galleryTitle": "Where the senses move.",
+      "galleryHint": "Select an image to try the project",
+      "statProjects": "tools",
+      "statLanguages": "languages",
+      "statBrowser": "one web",
+      "photoAltCoast": "Generated sample of limestone cliffs, blue sea and pink clouds",
+      "photoAltBotanical": "Generated sample of dewy pink cosmos and white flowers",
+      "gallery0": "Light, rediscovered.",
+      "gallery1": "Look a little closer.",
+      "gallery2": "Sound you can shape."
+    }
+  },
+  "ja": {
+    "source": {
+      "intro": "写真に奥行きを。音に温もりを。創作に可能性を。",
+      "promise": "小さなタッチ。深い変化。",
+      "projects_title": "使うほど、広がる可能性。",
+      "projects_intro": "8つのツール。8つの感覚。",
+      "approach_title": "複雑さを減らし、可能性を増やす。",
+      "principles_lead": "必要を見つける。根拠でつくる。誰もが使えるように。",
+      "closing_lead": "小さな道具。長く残る変化。",
+      "project_descriptions": [
+        "1枚のイラストを編集可能なレイヤーとPSDに。隠れた部分は推定して補完します。",
+        "ネガを写真へ。明るさと色の調整から一括出力まで。",
+        "音源のコードと拍を推定。合成ピアノで確かめられます。",
+        "音色、ダイナミクス、空間。音を整えてWAVへ。",
+        "画像に合った拡大とノイズ抑制。16ビットPNGにも対応。",
+        "フィルムの色、粒子、光のにじみ。写真に新しい空気を。",
+        "ブラウザのページをPINでロック。変化を検知して記録します。",
+        "写真を見る7つの視点。画素とルールに基づく評価と改善のヒント。"
+      ]
+    },
+    "art": {
+      "One image. New layers.": "1枚の、その先へ。",
+      "Bring negatives to light.": "記憶を、再び光へ。",
+      "Find the harmony.": "音の中の和音を見る。",
+      "Give sound a little soul.": "音に、体温を。",
+      "More room for every detail.": "小さな細部。大きな違い。",
+      "A little analog nostalgia.": "今日に、昨日の色を。",
+      "A watchful browser.": "あなたの場所を見守る。",
+      "A fresh perspective on every photo.": "いい写真には、理由がある。",
+      "Small ideas.": "発想を、",
+      "Useful possibilities.": "感覚へ。"
+    },
+    "ui": {
+      "discover": "指先で体験する",
+      "selected": "01 / 8つの可能性",
+      "built": "02 / つくる理由",
+      "tryTitle": "見る瞬間から、触れる瞬間へ。",
+      "tryHelp": "カードをタップ。写真の縦線をドラッグ。感覚を変えてみてください。",
+      "concept": "操作できるコンセプトデモです。生成した作例と視覚効果は、各ツールの実際の処理結果ではありません。",
+      "galleryKicker": "見て、触れて、変えてみる。",
+      "galleryTitle": "感覚が動き出す。",
+      "galleryHint": "画像を選ぶと体験へ移動します",
+      "statProjects": "つのツール",
+      "statLanguages": "言語",
+      "statBrowser": "ひとつのウェブ",
+      "photoAltCoast": "石灰岩の崖と青い海、薄桃色の雲を描いた生成作例",
+      "photoAltBotanical": "露をまとった薄桃色のコスモスと白い花の生成作例",
+      "gallery0": "光を、もう一度。",
+      "gallery1": "細部を、もっと深く。",
+      "gallery2": "音に、触れる。"
+    }
+  },
+  "zh": {
+    "source": {
+      "intro": "让照片有深度。让声音有温度。让创作有可能。",
+      "promise": "轻轻一触。深深改变。",
+      "projects_title": "越用，越见可能。",
+      "projects_intro": "八款工具。八种感受。",
+      "approach_title": "少一些复杂，多一些可能。",
+      "principles_lead": "发现需求。依据事实。让人人可用。",
+      "closing_lead": "小工具。长久的改变。",
+      "project_descriptions": [
+        "将单张插画拆为可编辑图层与PSD。遮挡区域通过推测补全。",
+        "将底片变成照片。从亮度与色彩平衡，到批量导出。",
+        "估算音源的和弦与节拍，用合成钢琴试听。",
+        "音色、动态与空间。塑造声音，导出WAV。",
+        "根据图像调整放大与降噪，支持16位PNG输出。",
+        "胶片色彩、颗粒与光晕。为照片换一种氛围。",
+        "以PIN锁定浏览器页面，检测并记录变化。",
+        "用七个角度读懂照片。基于像素与规则评分，给出改进建议。"
+      ]
+    },
+    "art": {
+      "One image. New layers.": "一张图，不止一种可能。",
+      "Bring negatives to light.": "让记忆，再次发光。",
+      "Find the harmony.": "看见声音里的和弦。",
+      "Give sound a little soul.": "给声音，一点温度。",
+      "More room for every detail.": "小细节。大不同。",
+      "A little analog nostalgia.": "以昨日色彩，记录今天。",
+      "A watchful browser.": "守护你的位置。",
+      "A fresh perspective on every photo.": "好照片，自有道理。",
+      "Small ideas.": "让灵感，",
+      "Useful possibilities.": "触手可及。"
+    },
+    "ui": {
+      "discover": "亲手感受",
+      "selected": "01 / 八种可能",
+      "built": "02 / 为何创造",
+      "tryTitle": "从看见，到触动。",
+      "tryHelp": "点击卡片，拖动照片中的竖线，改变感受。",
+      "concept": "这是可交互的概念演示。生成的示例图片及视觉效果并非各工具的实际处理结果。",
+      "galleryKicker": "看见。触碰。改变。",
+      "galleryTitle": "感官，动起来。",
+      "galleryHint": "点击图片即可进入体验",
+      "statProjects": "款工具",
+      "statLanguages": "种语言",
+      "statBrowser": "一个网络",
+      "photoAltCoast": "石灰岩海岸、蓝色海水与粉色云层的生成示例图片",
+      "photoAltBotanical": "沾满露水的粉色波斯菊与白花的生成示例图片",
+      "gallery0": "重新看见光。",
+      "gallery1": "细节，再近一点。",
+      "gallery2": "亲手塑造声音。"
+    }
+  },
+  "fr": {
+    "source": {
+      "intro": "Du relief dans l’image. De la chaleur dans le son. De l’espace pour créer.",
+      "promise": "Un geste. Une empreinte.",
+      "projects_title": "Le possible, à portée de main.",
+      "projects_intro": "Huit outils. Huit façons de ressentir.",
+      "approach_title": "Moins de friction. Plus de possibles.",
+      "principles_lead": "Écouter le besoin. Construire sur des faits. Ouvrir à tous.",
+      "closing_lead": "De petits outils. Une empreinte durable.",
+      "project_descriptions": [
+        "Une illustration en calques modifiables et PSD. Les zones cachées sont estimées.",
+        "Du négatif à la photo : lumière, équilibre des couleurs et export par lots.",
+        "Estimez accords et pulsations, puis écoutez-les au piano de synthèse.",
+        "Timbre, dynamique, espace. Façonnez le son et exportez en WAV.",
+        "Agrandissement adapté à l’image, réduction du bruit et PNG jusqu’à 16 bits.",
+        "Couleurs argentiques, grain et halo. Une autre atmosphère pour vos photos.",
+        "Verrouillez une page par PIN. Détectez les changements et consignez les événements.",
+        "Sept regards sur une photo. Analyse par pixels et règles, avec pistes d’amélioration."
+      ]
+    },
+    "art": {
+      "One image. New layers.": "Au-delà de l’image plate.",
+      "Bring negatives to light.": "Remettre les souvenirs en lumière.",
+      "Find the harmony.": "Voir l’harmonie.",
+      "Give sound a little soul.": "Donner au son une chaleur.",
+      "More room for every detail.": "Petits détails. Grande différence.",
+      "A little analog nostalgia.": "Aujourd’hui, aux couleurs d’hier.",
+      "A watchful browser.": "Veiller sur votre espace.",
+      "A fresh perspective on every photo.": "Une belle photo a ses raisons.",
+      "Small ideas.": "Des idées.",
+      "Useful possibilities.": "À ressentir."
+    },
+    "ui": {
+      "discover": "À vous de ressentir",
+      "selected": "01 / HUIT POSSIBILITÉS",
+      "built": "02 / POURQUOI CRÉER",
+      "tryTitle": "Du regard au geste.",
+      "tryHelp": "Touchez une carte. Glissez la ligne dans la photo. Changez la sensation.",
+      "concept": "Démonstrations de concept interactives. Les images générées et effets visuels ne représentent pas les résultats réels des outils.",
+      "galleryKicker": "VOIR. TOUCHER. TRANSFORMER.",
+      "galleryTitle": "Les sens en mouvement.",
+      "galleryHint": "Choisissez une image pour essayer le projet",
+      "statProjects": "outils",
+      "statLanguages": "langues",
+      "statBrowser": "un seul web",
+      "photoAltCoast": "Exemple généré de falaises calcaires, mer bleue et nuages roses",
+      "photoAltBotanical": "Exemple généré de cosmos roses et fleurs blanches couverts de rosée",
+      "gallery0": "Retrouver la lumière.",
+      "gallery1": "Regarder de plus près.",
+      "gallery2": "Façonner le son."
+    }
+  },
+  "es": {
+    "source": {
+      "intro": "Profundidad en la imagen. Calidez en el sonido. Espacio para crear.",
+      "promise": "Un gesto. Una huella.",
+      "projects_title": "Posibilidades en tus manos.",
+      "projects_intro": "Ocho herramientas. Ocho formas de sentir.",
+      "approach_title": "Menos fricción. Más posibilidades.",
+      "principles_lead": "Encontrar la necesidad. Crear con fundamento. Abrirlo a todos.",
+      "closing_lead": "Pequeñas herramientas. Cambios que quedan.",
+      "project_descriptions": [
+        "De una ilustración a capas editables y PSD. Las zonas ocultas se estiman.",
+        "Del negativo a la fotografía. Equilibra luz y color y exporta por lotes.",
+        "Estima acordes y pulsos. Escúchalos con un piano sintetizado.",
+        "Timbre, dinámica, espacio. Da forma al sonido y exporta WAV.",
+        "Ampliación adaptada a la imagen y reducción de ruido. PNG de hasta 16 bits.",
+        "Color de película, grano y halos. Otra atmósfera para tus fotos.",
+        "Bloquea una página con PIN. Detecta cambios y registra eventos.",
+        "Siete miradas sobre una foto. Evaluación por píxeles y reglas, con consejos para mejorar."
+      ]
+    },
+    "art": {
+      "One image. New layers.": "Más allá de una sola imagen.",
+      "Bring negatives to light.": "Devuelve la luz al recuerdo.",
+      "Find the harmony.": "Ve la armonía.",
+      "Give sound a little soul.": "Dale calidez al sonido.",
+      "More room for every detail.": "Pequeños detalles. Gran diferencia.",
+      "A little analog nostalgia.": "Hoy, con los colores de ayer.",
+      "A watchful browser.": "Cuida tu espacio.",
+      "A fresh perspective on every photo.": "Una buena foto tiene sus razones.",
+      "Small ideas.": "Ideas que",
+      "Useful possibilities.": "se sienten."
+    },
+    "ui": {
+      "discover": "Siéntelo tú mismo",
+      "selected": "01 / OCHO POSIBILIDADES",
+      "built": "02 / POR QUÉ CREAR",
+      "tryTitle": "De mirar a sentir.",
+      "tryHelp": "Toca una tarjeta. Arrastra la línea en la foto. Cambia la sensación.",
+      "concept": "Demostraciones interactivas de concepto. Las imágenes generadas y los efectos visuales no representan resultados reales de las herramientas.",
+      "galleryKicker": "MIRA. TOCA. TRANSFORMA.",
+      "galleryTitle": "Los sentidos en movimiento.",
+      "galleryHint": "Elige una imagen para probar el proyecto",
+      "statProjects": "herramientas",
+      "statLanguages": "idiomas",
+      "statBrowser": "una sola web",
+      "photoAltCoast": "Ejemplo generado de acantilados de piedra caliza, mar azul y nubes rosas",
+      "photoAltBotanical": "Ejemplo generado de cosmos rosas y flores blancas con rocío",
+      "gallery0": "Redescubre la luz.",
+      "gallery1": "Mira un poco más cerca.",
+      "gallery2": "Da forma al sonido."
+    }
+  }
+}

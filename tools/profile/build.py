@@ -601,4 +601,13 @@ def main():
         assert x>=-1 and x+width<=w+1,(lang,title,txt,x,width,w)
     print(f'Built {20*len(LOCALES)} localized artwork assets, {4*len(LOCALES)} language buttons, and {len(LOCALES)} READMEs.')
 
-if __name__=='__main__':main()
+if __name__=='__main__':
+    # The current white aurora profile shares the interactive portfolio copy.
+    # Keep the original generator available for reproducing the legacy artwork.
+    import sys
+    if '--legacy' in sys.argv:
+        main()
+    else:
+        from portfolio import main as build_portfolio_profile
+        build_portfolio_profile()
+
