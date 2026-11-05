@@ -3,6 +3,170 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<!-- Velvitty launch screen -->
+<script data-velvitty-launch>
+(() => {
+  'use strict';
+  function applyGlassMaterial(glass, brightness, light) {
+    const middleTone = 1 - Math.abs(brightness * 2 - 1);
+    glass.style.setProperty('--glass-alpha', (.055 + .075 * middleTone).toFixed(3));
+    glass.style.setProperty('--glass-rgb', light ? '255 255 255' : '12 12 12');
+    glass.style.setProperty('--glass-shadow-opacity', (.42 - .16 * brightness).toFixed(3));
+  }
+  if (window.top !== window) return;
+
+  const source = document.currentScript.dataset.app;
+  const host = document.createElement('velvitty-launch');
+  const root = host.attachShadow({mode: 'open'});
+  root.innerHTML = "<style>:host{position:fixed;inset:0;z-index:2147483647;display:grid;place-items:center;align-items:safe center;overflow:auto;box-sizing:border-box;padding:28px;background:var(--app-ui-background,#181818);color:#fff;font:16px/1.7 system-ui,-apple-system,\"Noto Sans KR\",sans-serif;text-align:center;isolation:isolate}\n*{box-sizing:border-box}.app-backdrop{position:fixed;inset:-5px;z-index:-2;width:calc(100% + 10px);height:calc(100% + 10px);border:0;pointer-events:none;opacity:.84;filter:none;background:transparent}.scene{position:fixed;inset:0;z-index:-1;background:transparent;backdrop-filter:blur(1.8px);-webkit-backdrop-filter:blur(1.8px);pointer-events:none}\n.glass{--lens-radius:32px;position:relative;isolation:isolate;width:min(620px,100%);padding:38px 42px 34px;border:1px solid #ffffff1a;border-radius:var(--lens-radius);background:rgb(var(--glass-rgb,255 255 255)/var(--glass-alpha,.075));backdrop-filter:blur(8.5px);-webkit-backdrop-filter:blur(8.5px);box-shadow:0 36px 88px -22px rgb(0 0 0/var(--glass-shadow-opacity,.34)),0 12px 32px -10px #0000002e,0 2px 8px -3px #0000001a,inset 0 1px 2px #ffffff30,inset 0 -1px 2px #ffffff12;pointer-events:none;filter:none;opacity:1}.lens-clip{position:absolute;inset:0;z-index:0;border-radius:inherit;overflow:hidden;pointer-events:none}.lens-optics{position:absolute;inset:0;z-index:0;border-radius:inherit;overflow:hidden;pointer-events:none;background:transparent;filter:none}.lens-copy{position:absolute;display:block;max-width:none;margin:0;padding:0;border:0;pointer-events:none;opacity:calc(1 - var(--glass-alpha,.075));background:transparent;filter:none}.glass:before{content:\"\";position:absolute;z-index:2;inset:0;padding:1px;border-radius:inherit;pointer-events:none;background:conic-gradient(from 142deg at 50% 50%,transparent 0deg,#ff9d7f88 9deg,#ffd17377 19deg,#a8edc777 29deg,#88dcff88 39deg,#aeb4ff88 49deg,#e0acff77 59deg,transparent 78deg,transparent 175deg,#e0acff66 190deg,#88dcff77 205deg,#a8edc766 217deg,#ffd17366 229deg,#ff9d7f66 241deg,transparent 260deg,transparent 360deg);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask-composite:exclude}.glass:after{content:\"\";position:absolute;z-index:2;inset:-4px -3px -7px;border-radius:calc(var(--lens-radius) + 4px);border:1px solid #ffffff0d;box-shadow:inset 0 -2px 3px #ffffff0d;pointer-events:none}.brand{position:relative;z-index:3;margin:0 0 28px;color:#f4f4f4;font-size:13px;font-weight:500;letter-spacing:.04em;overflow-wrap:anywhere;text-shadow:0 1px 4px #0007}.symbol{position:relative;z-index:3;display:grid;place-items:center;width:72px;height:72px;margin:0 auto 26px;border:1px solid #ffffff35;border-radius:22px;background:linear-gradient(135deg,#ffffff14,#ffffff02);box-shadow:inset 0 1px 1px #ffffff70,inset 0 -2px 2px #ffffff20,0 3px 7px #0002;color:#fff}.symbol svg{width:32px;height:32px}.primary{position:relative;z-index:3;margin:0;font-size:clamp(18px,2.8vw,23px);line-height:1.75;font-weight:600;letter-spacing:-.04em;word-break:keep-all;overflow-wrap:anywhere;text-shadow:0 1px 5px #0008}.secondary{position:relative;z-index:3;margin:20px 0 29px;color:#f1f1f1;font-size:15px;line-height:1.75;word-break:keep-all;text-shadow:0 1px 4px #0007}.retry-note{position:relative;z-index:3;margin:27px 0 0;color:#e5e5e5;font-size:12px;line-height:1.8;word-break:keep-all;letter-spacing:-.02em;text-shadow:0 1px 3px #0006}.retry-surface{position:fixed;inset:0;z-index:5;width:100%;height:100%;margin:0;padding:0;border:0;background:transparent;cursor:pointer;outline:none}.retry-surface:focus-visible~.glass{outline:3px solid #fff;outline-offset:10px}\n@media(max-width:540px){:host{padding:20px}.glass{padding:28px 23px}.brand{margin-bottom:25px}.symbol{width:64px;height:64px;margin-bottom:23px}.secondary{font-size:14px;margin-top:17px;margin-bottom:25px}}\n\n.glass{--lens-ink:#fff;--lens-muted:#ededed}.glass[data-surface=\"light\"]{--lens-ink:#171717;--lens-muted:#444}.glass :is(.brand,.primary,.symbol){color:var(--lens-ink)}.glass :is(.secondary,.retry-note){color:var(--lens-muted)}.glass[data-surface=\"light\"] :is(.brand,.primary,.secondary,.retry-note){text-shadow:none}\n\n[hidden]{display:none!important}\n:host([data-page-visible]){background:transparent}\n.loading-meter{display:grid;grid-template-columns:1fr 3.5em;align-items:center;gap:12px;margin-top:26px}\nprogress{appearance:none;width:100%;height:7px;overflow:hidden;border:0;border-radius:999px;background:#ffffff24;color:#e7edf7}\nprogress::-webkit-progress-bar{background:transparent}\nprogress::-webkit-progress-value{border-radius:inherit;background:currentColor}\nprogress::-moz-progress-bar{border-radius:inherit;background:currentColor}\n.glass[data-surface=\"light\"] progress{background:#1b202222;color:#434b54}\n.percent{font-size:13px;font-variant-numeric:tabular-nums;color:var(--lens-muted);text-align:right}\n</style><iframe class=\"app-backdrop\" title=\"\" sandbox=\"allow-same-origin\" tabindex=\"-1\" inert aria-hidden=\"true\"></iframe>\n<div class=\"scene\" aria-hidden=\"true\"></div>\n<button class=\"retry-surface\" type=\"button\" aria-label=\"연결을 다시 시도하려면 화면을 아무 곳이나 누르세요.\" hidden></button>\n<main class=\"glass\">\n  <p class=\"primary\" role=\"status\">어플리케이션이 실행 중 입니다. 잠시만 기다려 주세요.</p>\n  <p class=\"secondary\" hidden>네트워크 환경을 확인해 주세요.</p>\n  <div class=\"loading-meter\"><progress aria-label=\"앱 실행 진행률\" max=\"100\" value=\"0\">0%</progress><span class=\"percent\" aria-hidden=\"true\">0%</span></div>\n  <p class=\"retry-note\" hidden>연결을 다시 시도하려면 화면을 아무 곳이나 누르세요.</p>\n</main>";
+  document.documentElement.append(host);
+
+  const glass = root.querySelector('.glass');
+  const message = root.querySelector('.primary');
+  const guidance = root.querySelector('.secondary');
+  const retry = root.querySelector('.retry-surface');
+  const hint = root.querySelector('.retry-note');
+  const meter = root.querySelector('.loading-meter');
+  const progress = root.querySelector('progress');
+  const percent = root.querySelector('.percent');
+  const backdrop = root.querySelector('.app-backdrop');
+  const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let frame;
+  let ready = false;
+  let offline = false;
+  let startTime;
+  let finishTime;
+  let finishFrom;
+
+  function removeSplash() {
+    window.removeEventListener('offline', showOffline);
+    host.remove();
+  }
+
+  function showOffline() {
+    offline = true;
+    frame?.removeAttribute('src');
+    delete host.dataset.pageVisible;
+    delete glass.dataset.surface;
+    message.textContent = '인터넷 연결 상태가 불안정하여 어플리케이션을 실행할 수 없습니다.';
+    guidance.hidden = false;
+    hint.hidden = false;
+    retry.hidden = false;
+    meter.hidden = true;
+  }
+
+  function showPageBehindGlass(page, snapshot = false) {
+    const bodyStyle = page.defaultView.getComputedStyle(page.body);
+    const bodyColor = bodyStyle.backgroundColor.match(/[\d.]+/g)?.map(Number);
+    const htmlColor = page.defaultView.getComputedStyle(page.documentElement)
+      .backgroundColor.match(/[\d.]+/g)?.map(Number);
+    const color = bodyColor && bodyColor[3] !== 0 ? bodyColor : htmlColor;
+    const ink = bodyStyle.color.match(/[\d.]+/g)?.map(Number) || [0, 0, 0];
+    const light = color && color[3] !== 0
+      ? .2126 * color[0] + .7152 * color[1] + .0722 * color[2] > 140
+      : (ink[0] + ink[1] + ink[2]) / 3 < 140;
+    glass.dataset.surface = light ? 'light' : 'dark';
+    const brightness = color && color[3] !== 0
+      ? (.2126 * color[0] + .7152 * color[1] + .0722 * color[2]) / 255
+      : (light ? 245 : 24) / 255;
+    applyGlassMaterial(glass, brightness, light);
+    if (snapshot) {
+      host.style.setProperty('--app-ui-background', light ? '#f5f5f5' : '#181818');
+    } else {
+      backdrop.hidden = true;
+      host.dataset.pageVisible = '';
+    }
+  }
+
+  async function loadSavedBackdrop() {
+    if (!('caches' in window)) return;
+    const scope = new URL('./', location.href).href;
+    const marker = ':' + encodeURIComponent(scope) + ':';
+    const url = new URL('./pwa-ui.html', scope).href;
+    const names = (await caches.keys()).filter(name => name.startsWith('velvitty-pwa:') && name.includes(marker) && name.endsWith(':shell')).reverse();
+    for (const cacheName of names) {
+      const response = await caches.match(url, {cacheName});
+      if (!response?.ok) continue;
+      const html = await response.text();
+      if (!ready && host.isConnected) backdrop.srcdoc = html;
+      return;
+    }
+  }
+
+  function pageReady(page) {
+    if (offline || ready || !page?.body) return;
+    if (page.querySelector('#connection-message') && page.querySelector('.retry-surface')) {
+      removeSplash();
+      return;
+    }
+    ready = true;
+    showPageBehindGlass(page);
+  }
+
+  function connectFrame() {
+    frame = document.getElementById('application');
+    if (!frame || offline) return;
+    frame.addEventListener('load', function loaded() {
+      const page = frame.contentDocument;
+      if (page?.URL === 'about:blank') return;
+      frame.removeEventListener('load', loaded);
+      if (page) pageReady(page);
+      else if (host.isConnected) showOffline();
+    });
+    frame.src = source + location.search + location.hash;
+  }
+
+  function paintProgress(now) {
+    if (offline || !host.isConnected) return;
+    startTime ??= now;
+    const page = frame?.contentDocument;
+    if (page && page.URL !== 'about:blank' && page.readyState !== 'loading') pageReady(page);
+    if (!host.isConnected) return;
+
+    let value;
+    if (ready) {
+      finishTime ??= now;
+      finishFrom ??= progress.value;
+      const fraction = reducedMotion ? 1 : Math.min((now - finishTime) / 96, 1);
+      value = Math.round(finishFrom + (96 - finishFrom) * fraction);
+    } else {
+      value = Math.round(88 * (1 - Math.exp(-(now - startTime) / 430)));
+    }
+    if (progress.value !== value) {
+      progress.value = value;
+      percent.textContent = value + '%';
+    }
+    if (value === 96) {
+      requestAnimationFrame(() => {
+        if (!offline) removeSplash();
+      });
+    } else {
+      requestAnimationFrame(paintProgress);
+    }
+  }
+
+  retry.addEventListener('click', () => location.reload());
+  backdrop.addEventListener('load', () => {
+    const page = backdrop.contentDocument;
+    if (!ready && page?.body && page.URL !== 'about:blank') showPageBehindGlass(page, true);
+  });
+  loadSavedBackdrop().catch(() => {});
+  window.addEventListener('offline', showOffline);
+  if (navigator.onLine === false) {
+    showOffline();
+    return;
+  }
+
+  if (source) {
+    document.addEventListener('DOMContentLoaded', connectFrame, {once: true});
+  } else {
+    document.addEventListener('DOMContentLoaded', () => pageReady(document), {once: true});
+  }
+  requestAnimationFrame(paintProgress);
+})();
+</script>
+<!-- /Velvitty launch screen -->
+
 <meta name="description" content="Velvitty · 연이의 사진, 음향, 창작과 보안을 위한 브라우저 도구.">
 <title>Velvitty — Ideas in motion</title>
 <style>
@@ -15,7 +179,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
-<script src="./pwa.js" defer></script>
+<script src="./pwa.js" async></script>
 <!-- /Velvitty PWA -->
 </head>
 <body>
