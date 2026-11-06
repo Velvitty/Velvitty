@@ -28,12 +28,18 @@ conceptual examples, not real application processing results. Image provenance
 is documented in `assets/README.md`. The original WebP photos remain embedded
 at full quality in the interactive HTML.
 
-The profile's Möbius keeps the exact clips, UV affine transforms, lighting,
-silhouette and fixed pose from `mobius-reference.svg`. Animated paint servers
-move only its material in the original positive-X direction, with a 5.6-second
-cycle. Reduced motion switches its material to static paint servers. The full
-HTML retains its 120 Hz logical timeline and late-frame interpolation; actual
-display frame rate is controlled by the browser and display.
+The profile precomputes material coordinates from the source Möbius's 720
+face clips, affine UV transforms and original paint order. Each display
+update moves one repeating tile through that map, following the original
+positive-X, 5.6-second cycle. The original outline masks the result; lighting,
+stationary axis marks and photo shadows are baked once. Reduced motion freezes
+the same surface at its resting position. The interactive HTML uses its own
+120 Hz logical timeline and late-frame interpolation.
+
+The normal profile build reads the committed assets from `tools/profile/belt/`
+and checks their source-model digest. To refresh them after changing the model
+or hero photos, run `python3 tools/profile/bake_belt.py` (NumPy, Pillow, and
+FFmpeg with librsvg), then run the standard profile generator.
 
 Profile image captions describe opening the live demonstration, rather than
 implying that a README image is a working slider. The live page retains the

@@ -1,0 +1,12 @@
+{
+  "model_sha256": "8723d47dde695523f8a60e7411c8e07d9983fb48f7185dbf80f8bdc9bd8df137",
+  "tile_width": 512,
+  "tile_height": 240,
+  "displacement_scale": 896,
+  "paint_bounds": [
+    -142,
+    -96,
+    317,
+    209
+  ]
+}

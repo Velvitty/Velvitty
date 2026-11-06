@@ -5,7 +5,8 @@ The profile is an SVG image adaptation of the client-side portfolio. GitHub
 does not execute page JavaScript in a README; each artwork opens its live demo.
 """
 from pathlib import Path
-from copy import deepcopy
+from functools import cache
+import hashlib
 from html import escape
 import base64, json, math, re, xml.etree.ElementTree as ET
 
@@ -104,34 +105,85 @@ def photo_print(s,name,x,y,w,h,rotation=0):
  cid=f'photo-{len(s.defs)}';s.defs.append(f'<clipPath id="{cid}">{rect(x,y,w,h,"white",5)}</clipPath>')
  return f'<g transform="rotate({rotation} {x+w/2} {y+h/2})">'+rect(x-10,y-10,w+20,h+32,'#fff',8,'filter="url(#shadow)"')+image(name,x,y,w,h,f'clip-path="url(#{cid})"')+'</g>'
 
-def mobius(s):
- r=ET.parse(SOURCE/'mobius-reference.svg').getroot()
- # Replace referenced animated groups with animated paint servers. Each face
- # keeps its exact clip and UV affine transform; no outer transform rotates.
- defs=r.find(q('defs'))
- for kind in ('surface','edge'):
-  motif=next(e for e in defs if e.get('id')==f'mb-{kind}-motif')
-  p=ET.Element(q('pattern'),{'id':f'profile-{kind}','patternUnits':'userSpaceOnUse','width':'1200','height':'120'})
-  for child in list(motif):p.append(deepcopy(child))
-  p.append(ET.Element(q('animateTransform'),{'attributeName':'patternTransform','type':'translate','values':'0 0;1200 0','dur':'5.6s','repeatCount':'indefinite'}))
-  defs.append(p)
- for e in r.iter():
-  if e.get('data-material-face'):
-   uv=list(e)[0];use=list(uv)[0];kind='edge' if 'edge' in use.get('href','') else 'surface';uv.remove(use)
-   ET.SubElement(uv,q('rect'),{'x':'-2400','y':'0','width':'6000','height':'120','fill':f'url(#profile-{kind})'})
- # Reduced motion changes only the face paint server, retaining one fixed mesh.
- for e in r.iter():
-  if e.get('fill') in ('url(#profile-surface)','url(#profile-edge)'):
-   kind='edge' if 'edge' in e.get('fill') else 'surface'
-   e.set('class','belt-'+kind)
- for kind in ('surface','edge'):
-  p=deepcopy(next(e for e in defs if e.get('id')==f'profile-{kind}'));p.set('id',f'profile-{kind}-still')
-  for child in list(p):
-   if child.tag==q('animateTransform'):p.remove(child)
-  defs.append(p)
- s.defs.extend(xml(e) for e in defs)
- s.css.append('@media(prefers-reduced-motion:reduce){.belt-surface{fill:url(#profile-surface-still)}.belt-edge{fill:url(#profile-edge-still)}}')
- return xml(r.find(q('g')))
+@cache
+def belt_asset(name):
+    path = Path(__file__).with_name('belt') / name
+    mime = 'webp' if path.suffix == '.webp' else 'png'
+    return 'data:image/' + mime + ';base64,' + base64.b64encode(path.read_bytes()).decode()
+
+
+def hero_print(name, x, y, rotation):
+    # The print and its soft shadow move together as one small bitmap.
+    return (f'<g transform="rotate({rotation} {x+64} {y+44})">'
+            f'<image x="{x-70}" y="{y-70}" width="268" height="252" '
+            f'href="{belt_asset(name + ".webp")}"/></g>')
+
+
+def mobius(scene):
+    """Sample one moving material through the fixed mesh's precomputed UVs."""
+    source = (SOURCE / 'mobius-reference.svg').read_bytes()
+    layout = json.loads((Path(__file__).with_name('belt') / 'layout.json').read_text())
+    if hashlib.sha256(source).hexdigest() != layout['model_sha256']:
+        raise ValueError('Source mesh changed; regenerate the profile maps with bake_belt.py')
+    model = ET.fromstring(source)
+    definitions = {entry.get('id'): entry for entry in model.find(q('defs'))}
+    retained = ('mb-shadow', 'mb-smooth-outline', 'belt-pearl', 'belt-edge',
+                'belt-satin', 'mb-surface-motif', 'mb-edge-motif')
+    scene.defs.extend(xml(definitions[name]) for name in retained)
+
+    width, height = layout['tile_width'], layout['tile_height']
+    x, y, w, h = layout['paint_bounds']
+    paint_bounds = f'x="{x}" y="{y}" width="{w}" height="{h}"'
+    field = 'x="-210" y="-160" width="420" height="330"'
+    left, right = min(-210, -width//2)-32, max(210, width//2)+32
+    top, bottom = min(-160, -height//2)-16, max(170, height//2)+16
+    sampling_bounds = f'x="{left}" y="{top}" width="{right-left}" height="{bottom-top}"'
+
+    scene.defs.append(
+        f'<pattern id="belt-tile" patternUnits="userSpaceOnUse" x="{-width//2}" '
+        f'y="{-height//2}" width="{width}" height="{height}" '
+        'viewBox="0 0 1200 240" preserveAspectRatio="none">'
+        '<use href="#mb-surface-motif"/><use href="#mb-edge-motif" y="120"/></pattern>'
+    )
+    scene.defs.append(
+        '<filter id="belt-wrap" filterUnits="userSpaceOnUse" primitiveUnits="userSpaceOnUse" '
+        f'{sampling_bounds} color-interpolation-filters="sRGB">'
+        f'<feImage {field} href="{belt_asset("displacement.png")}" preserveAspectRatio="none" result="uv"/>'
+        f'<feDisplacementMap {paint_bounds} in="SourceGraphic" in2="uv" '
+        f'scale="{layout["displacement_scale"]}" xChannelSelector="R" yChannelSelector="G" result="surface"/>'
+        f'<feComposite {paint_bounds} in="surface" in2="uv" operator="in"/></filter>'
+    )
+    duration = definitions['mb-surface-material'].find('.//' + q('animateTransform')).get('dur')
+    scene.css.append(
+        '@keyframes belt-advance{from{transform:translateX(0)}'
+        f'to{{transform:translateX({width}px)}}}}'
+        f'.belt-transport{{animation:belt-advance {duration} linear infinite}}'
+    )
+
+    group = model.find(q('g'))
+    for axis in (element for element in group if element.get('data-axis-layer')):
+        layer = axis.get('data-axis-layer')
+        axis.attrib.clear()
+        for child in list(axis):
+            axis.remove(child)
+        ET.SubElement(axis, q('image'), {
+            'x': '-254', 'y': '-254', 'width': '508', 'height': '508',
+            'href': belt_asset('axis-' + layer + '.png')
+        })
+    solid = next(element for element in group.iter() if element.get('class') == 'mobius-solid')
+    for element in list(solid)[1:]:
+        solid.remove(element)
+    paint = ET.SubElement(solid, q('g'), {'filter': 'url(#belt-wrap)'})
+    ET.SubElement(paint, q('rect'), {
+        'class': 'belt-transport', 'x': str(left-width), 'y': str(top),
+        'width': str(right-left+width), 'height': str(bottom-top), 'fill': 'url(#belt-tile)'
+    })
+    ET.SubElement(solid, q('image'), {
+        'x': '-210', 'y': '-160', 'width': '420', 'height': '330',
+        'href': belt_asset('lighting.png')
+    })
+    return xml(group)
+
 
 def hero(lang,mobile=False):
  c=COPY[lang];base=BASE[lang];w,h=(640,820) if mobile else (1200,580)
@@ -143,8 +195,8 @@ def hero(lang,mobile=False):
  s.add(s.text(c['source']['promise'],44,y+size*1.17+55,30 if mobile else 24,MUTED,width=545 if mobile else 510))
  mx,my,scale=(320,515,1.12) if mobile else (875,287,1.12)
  s.add(f'<g transform="translate({mx} {my}) scale({scale})">'+mobius(s)+'</g>')
- s.add('<g class="float">'+photo_print(s,'coast',44 if mobile else 687,365 if mobile else 100,128,88,-10)+'</g>')
- s.add('<g class="float" style="animation-delay:-2.8s">'+photo_print(s,'botanical',463 if mobile else 1001,639 if mobile else 395,128,88,9)+'</g>')
+ s.add('<g class="float">'+hero_print('coast',44 if mobile else 687,365 if mobile else 100,-10)+'</g>')
+ s.add('<g class="float" style="animation-delay:-2.8s">'+hero_print('botanical',463 if mobile else 1001,639 if mobile else 395,9)+'</g>')
  by=h-43
  s.add(s.text('08',44,by,27,bold=True));s.add(s.text(c['ui']['statProjects'],93,by,17,MUTED,width=125))
  s.add(s.text('06',238,by,27,bold=True));s.add(s.text(c['ui']['statLanguages'],287,by,17,MUTED,width=130))
@@ -259,7 +311,8 @@ def language_buttons(lang):
    s.write('language'+('-active' if active else '')+('-mobile' if mobile else '')+'.svg')
 
 def picture(lang,slug,alt,href=None):
- base=f'assets/portfolio/{lang}/';body=f'<picture><source media="(max-width: 640px)" srcset="{base}{slug}-mobile.svg?v=1" /><img src="{base}{slug}.svg?v=1" width="100%" alt="{esc(alt)}" /></picture>'
+ version=2 if slug=='hero' else 1
+ base=f'assets/portfolio/{lang}/';body=f'<picture><source media="(max-width: 640px)" srcset="{base}{slug}-mobile.svg?v={version}" /><img src="{base}{slug}.svg?v={version}" width="100%" alt="{esc(alt)}" /></picture>'
  if href:body=f'<a href="{href}">{body}</a>'
  return '<p align="center">'+body+'</p>'
 
