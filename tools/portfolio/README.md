@@ -31,9 +31,11 @@ at full quality in the interactive HTML.
 The profile precomputes material coordinates from the source Möbius's 720
 face clips, affine UV transforms and original paint order. Each display
 update moves one repeating tile through that map, following the original
-positive-X, 5.6-second cycle. The original outline masks the result; lighting,
-stationary axis marks and photo shadows are baked once. Reduced motion freezes
-the same surface at its resting position. The interactive HTML uses its own
+positive-X, 5.6-second cycle. The original outline masks the result. Six axis markers follow the source
+9-second position and brightness tracks, switching between back and front
+layers at the source depth crossings. Thin vector strokes outline the moving
+markers. Lighting and photo shadows are baked once. Reduced motion shows the
+source resting markers and the belt at its resting position. The interactive HTML uses its own
 120 Hz logical timeline and late-frame interpolation.
 
 The normal profile build reads the committed assets from `tools/profile/belt/`

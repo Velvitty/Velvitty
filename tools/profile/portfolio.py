@@ -119,6 +119,37 @@ def hero_print(name, x, y, rotation):
             f'href="{belt_asset(name + ".webp")}"/></g>')
 
 
+def restore_axis_motion(layer):
+    """Draw the six reference tracks on their original side of the ribbon."""
+    layer_name = layer.get('data-axis-layer')
+    layer.attrib.pop('filter', None)
+    motion = next(child for child in layer if child.get('class') == 'mobius-axes-motion')
+    motion.set('class', 'mobius-axes-motion flow')
+    for track in motion:
+        path = track.find(q('path'))
+        name = path.get('data-axis')
+        path_id = f'axis-{layer_name}-{name}'
+        path.set('id', path_id)
+        # Each use inherits its own stroke. The visible path keeps the exact
+        # source d and brightness animations, as does the depth gate on track.
+        color = path.attrib.pop('stroke')
+        track.set('stroke', color)
+        core_index = list(track).index(path)
+        for width, stroke, opacity in ((9, color, '.15'), (6.5, '#111522', '.92')):
+            track.insert(core_index, ET.Element(q('use'), {
+                'href': '#' + path_id, 'stroke': stroke, 'stroke-width': str(width),
+                'opacity': opacity,
+            }))
+            core_index += 1
+
+    still = next(child for child in layer if child.get('class') == 'mobius-axes-still')
+    layer.remove(still)
+    ET.SubElement(layer, q('image'), {
+        'class': 'mobius-axes-still still', 'x': '-254', 'y': '-254',
+        'width': '508', 'height': '508', 'href': belt_asset('axis-' + layer_name + '.png'),
+    })
+
+
 def mobius(scene):
     """Sample one moving material through the fixed mesh's precomputed UVs."""
     source = (SOURCE / 'mobius-reference.svg').read_bytes()
@@ -162,14 +193,7 @@ def mobius(scene):
 
     group = model.find(q('g'))
     for axis in (element for element in group if element.get('data-axis-layer')):
-        layer = axis.get('data-axis-layer')
-        axis.attrib.clear()
-        for child in list(axis):
-            axis.remove(child)
-        ET.SubElement(axis, q('image'), {
-            'x': '-254', 'y': '-254', 'width': '508', 'height': '508',
-            'href': belt_asset('axis-' + layer + '.png')
-        })
+        restore_axis_motion(axis)
     solid = next(element for element in group.iter() if element.get('class') == 'mobius-solid')
     for element in list(solid)[1:]:
         solid.remove(element)
@@ -311,7 +335,7 @@ def language_buttons(lang):
    s.write('language'+('-active' if active else '')+('-mobile' if mobile else '')+'.svg')
 
 def picture(lang,slug,alt,href=None):
- version=2 if slug=='hero' else 1
+ version=3 if slug=='hero' else 1
  base=f'assets/portfolio/{lang}/';body=f'<picture><source media="(max-width: 640px)" srcset="{base}{slug}-mobile.svg?v={version}" /><img src="{base}{slug}.svg?v={version}" width="100%" alt="{esc(alt)}" /></picture>'
  if href:body=f'<a href="{href}">{body}</a>'
  return '<p align="center">'+body+'</p>'
